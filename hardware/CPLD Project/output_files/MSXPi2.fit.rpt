@@ -1,5 +1,5 @@
 Fitter report for MSXPi2
-Fri Jul 03 09:53:20 2020
+Fri Jul 03 23:56:18 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -50,14 +50,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Fitter Summary                                                              ;
 +---------------------------+-------------------------------------------------+
-; Fitter Status             ; Successful - Fri Jul 03 09:53:19 2020           ;
+; Fitter Status             ; Successful - Fri Jul 03 23:56:18 2020           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; MSXPi2                                          ;
-; Top-level Entity Name     ; MSXPi2_Interface_Test                           ;
+; Top-level Entity Name     ; MSXPi2                                          ;
 ; Family                    ; MAX7000S                                        ;
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 14 / 128 ( 11 % )                               ;
+; Total macrocells          ; 36 / 128 ( 28 % )                               ;
 ; Total pins                ; 64 / 68 ( 94 % )                                ;
 +---------------------------+-------------------------------------------------+
 
@@ -88,7 +88,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 16     ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -96,7 +96,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pin.
+The pin-out file can be found in C:/Users/Elite/Desktop/Dev/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pin.
 
 
 +--------------------------------------------------+
@@ -104,7 +104,7 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 +------------------------------+-------------------+
 ; Resource                     ; Usage             ;
 +------------------------------+-------------------+
-; Logic cells                  ; 14 / 128 ( 11 % ) ;
+; Logic cells                  ; 36 / 128 ( 28 % ) ;
 ; Registers                    ; 0 / 128 ( 0 % )   ;
 ; Number of pterms used        ; 19                ;
 ; I/O pins                     ; 64 / 68 ( 94 % )  ;
@@ -114,11 +114,11 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 ; Global signals               ; 0                 ;
 ; Shareable expanders          ; 0 / 128 ( 0 % )   ;
 ; Parallel expanders           ; 0 / 120 ( 0 % )   ;
-; Cells using turbo bit        ; 14 / 128 ( 11 % ) ;
+; Cells using turbo bit        ; 36 / 128 ( 28 % ) ;
 ; Maximum fan-out              ; 9                 ;
 ; Highest non-global fan-out   ; 9                 ;
-; Total fan-out                ; 199               ;
-; Average fan-out              ; 2.55              ;
+; Total fan-out                ; 221               ;
+; Average fan-out              ; 2.21              ;
 +------------------------------+-------------------+
 
 
@@ -143,33 +143,11 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 ; A[7]    ; 25    ; --       ; 3   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; A[8]    ; 44    ; --       ; 5   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; A[9]    ; 28    ; --       ; 3   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_0  ; 55    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_1  ; 56    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_10 ; 73    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_11 ; 77    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_12 ; 4     ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_13 ; 5     ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_14 ; 60    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_15 ; 63    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_16 ; 6     ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_17 ; 65    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_18 ; 64    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_19 ; 8     ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_2  ; 57    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_20 ; 9     ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_22 ; 69    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; GPIO_23 ; 68    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; GPIO_24 ; 70    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; GPIO_25 ; 74    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; GPIO_26 ; 10    ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; GPIO_27 ; 67    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_3  ; 58    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_4  ; 61    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_5  ; 80    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_6  ; 81    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_7  ; 79    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_8  ; 76    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; GPIO_9  ; 75    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; IORQ_n  ; 30    ; --       ; 3   ; 7                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; M1      ; 31    ; --       ; 3   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; MREQ_n  ; 50    ; --       ; 5   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
@@ -179,31 +157,53 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 +---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                 ;
-+---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
-; Name    ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
-+---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
-; BDIR    ; 51    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; GPIO_21 ; 11    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; WAIT_n  ; 54    ; --       ; 6   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-+---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                    ;
++------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name       ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; BDIR       ; 51    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_21    ; 11    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[0]  ; 76    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[10] ; 64    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[11] ; 8     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[12] ; 9     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[13] ; 69    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[1]  ; 75    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[2]  ; 73    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[3]  ; 77    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[4]  ; 4     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[5]  ; 5     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[6]  ; 60    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[7]  ; 63    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[8]  ; 6     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; GPIO_A[9]  ; 65    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; WAIT_n     ; 54    ; --       ; 6   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
++------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Bidir Pins                                                                                                                                                                                                                                      ;
-+------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
-; Name ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Slow Slew Rate ; Open Drain ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
-+------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
-; D[0] ; 36    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[1] ; 17    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[2] ; 35    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[3] ; 16    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[4] ; 34    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[5] ; 15    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[6] ; 33    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-; D[7] ; 12    ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
-+------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                           ;
++-----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name      ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Slow Slew Rate ; Open Drain ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++-----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
+; D[0]      ; 36    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[1]      ; 17    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[2]      ; 35    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[3]      ; 16    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[4]      ; 34    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[5]      ; 15    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[6]      ; 33    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; D[7]      ; 12    ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; d_s[7]~18            ; -                   ;
+; GPIO_D[0] ; 55    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~2 (inverted)    ; -                   ;
+; GPIO_D[1] ; 56    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~3 (inverted)    ; -                   ;
+; GPIO_D[2] ; 57    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~4 (inverted)    ; -                   ;
+; GPIO_D[3] ; 58    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~5 (inverted)    ; -                   ;
+; GPIO_D[4] ; 61    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~6 (inverted)    ; -                   ;
+; GPIO_D[5] ; 80    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~7 (inverted)    ; -                   ;
+; GPIO_D[6] ; 81    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~8 (inverted)    ; -                   ;
+; GPIO_D[7] ; 79    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~9 (inverted)    ; -                   ;
++-----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -214,12 +214,12 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 ; 1        ; 0          ; --       ; GND+           ;        ;              ;         ;                 ;
 ; 2        ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
 ; 3        ; 2          ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
-; 4        ; 3          ; --       ; GPIO_12        ; input  ; TTL          ;         ; Y               ;
-; 5        ; 4          ; --       ; GPIO_13        ; input  ; TTL          ;         ; Y               ;
-; 6        ; 5          ; --       ; GPIO_16        ; input  ; TTL          ;         ; Y               ;
+; 4        ; 3          ; --       ; GPIO_A[4]      ; output ; TTL          ;         ; Y               ;
+; 5        ; 4          ; --       ; GPIO_A[5]      ; output ; TTL          ;         ; Y               ;
+; 6        ; 5          ; --       ; GPIO_A[8]      ; output ; TTL          ;         ; Y               ;
 ; 7        ; 6          ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 8        ; 7          ; --       ; GPIO_19        ; input  ; TTL          ;         ; Y               ;
-; 9        ; 8          ; --       ; GPIO_20        ; input  ; TTL          ;         ; Y               ;
+; 8        ; 7          ; --       ; GPIO_A[11]     ; output ; TTL          ;         ; Y               ;
+; 9        ; 8          ; --       ; GPIO_A[12]     ; output ; TTL          ;         ; Y               ;
 ; 10       ; 9          ; --       ; GPIO_26        ; input  ; TTL          ;         ; Y               ;
 ; 11       ; 10         ; --       ; GPIO_21        ; output ; TTL          ;         ; Y               ;
 ; 12       ; 11         ; --       ; D[7]           ; bidir  ; TTL          ;         ; Y               ;
@@ -265,33 +265,33 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 ; 52       ; 51         ; --       ; SLTSL          ; input  ; TTL          ;         ; Y               ;
 ; 53       ; 52         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
 ; 54       ; 53         ; --       ; WAIT_n         ; output ; TTL          ;         ; Y               ;
-; 55       ; 54         ; --       ; GPIO_0         ; input  ; TTL          ;         ; Y               ;
-; 56       ; 55         ; --       ; GPIO_1         ; input  ; TTL          ;         ; Y               ;
-; 57       ; 56         ; --       ; GPIO_2         ; input  ; TTL          ;         ; Y               ;
-; 58       ; 57         ; --       ; GPIO_3         ; input  ; TTL          ;         ; Y               ;
+; 55       ; 54         ; --       ; GPIO_D[0]      ; bidir  ; TTL          ;         ; Y               ;
+; 56       ; 55         ; --       ; GPIO_D[1]      ; bidir  ; TTL          ;         ; Y               ;
+; 57       ; 56         ; --       ; GPIO_D[2]      ; bidir  ; TTL          ;         ; Y               ;
+; 58       ; 57         ; --       ; GPIO_D[3]      ; bidir  ; TTL          ;         ; Y               ;
 ; 59       ; 58         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 60       ; 59         ; --       ; GPIO_14        ; input  ; TTL          ;         ; Y               ;
-; 61       ; 60         ; --       ; GPIO_4         ; input  ; TTL          ;         ; Y               ;
+; 60       ; 59         ; --       ; GPIO_A[6]      ; output ; TTL          ;         ; Y               ;
+; 61       ; 60         ; --       ; GPIO_D[4]      ; bidir  ; TTL          ;         ; Y               ;
 ; 62       ; 61         ; --       ; TCK            ; input  ; TTL          ;         ; N               ;
-; 63       ; 62         ; --       ; GPIO_15        ; input  ; TTL          ;         ; Y               ;
-; 64       ; 63         ; --       ; GPIO_18        ; input  ; TTL          ;         ; Y               ;
-; 65       ; 64         ; --       ; GPIO_17        ; input  ; TTL          ;         ; Y               ;
+; 63       ; 62         ; --       ; GPIO_A[7]      ; output ; TTL          ;         ; Y               ;
+; 64       ; 63         ; --       ; GPIO_A[10]     ; output ; TTL          ;         ; Y               ;
+; 65       ; 64         ; --       ; GPIO_A[9]      ; output ; TTL          ;         ; Y               ;
 ; 66       ; 65         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
 ; 67       ; 66         ; --       ; GPIO_27        ; input  ; TTL          ;         ; Y               ;
 ; 68       ; 67         ; --       ; GPIO_23        ; input  ; TTL          ;         ; Y               ;
-; 69       ; 68         ; --       ; GPIO_22        ; input  ; TTL          ;         ; Y               ;
+; 69       ; 68         ; --       ; GPIO_A[13]     ; output ; TTL          ;         ; Y               ;
 ; 70       ; 69         ; --       ; GPIO_24        ; input  ; TTL          ;         ; Y               ;
 ; 71       ; 70         ; --       ; TDO            ; output ; TTL          ;         ; N               ;
 ; 72       ; 71         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 73       ; 72         ; --       ; GPIO_10        ; input  ; TTL          ;         ; Y               ;
+; 73       ; 72         ; --       ; GPIO_A[2]      ; output ; TTL          ;         ; Y               ;
 ; 74       ; 73         ; --       ; GPIO_25        ; input  ; TTL          ;         ; Y               ;
-; 75       ; 74         ; --       ; GPIO_9         ; input  ; TTL          ;         ; Y               ;
-; 76       ; 75         ; --       ; GPIO_8         ; input  ; TTL          ;         ; Y               ;
-; 77       ; 76         ; --       ; GPIO_11        ; input  ; TTL          ;         ; Y               ;
+; 75       ; 74         ; --       ; GPIO_A[1]      ; output ; TTL          ;         ; Y               ;
+; 76       ; 75         ; --       ; GPIO_A[0]      ; output ; TTL          ;         ; Y               ;
+; 77       ; 76         ; --       ; GPIO_A[3]      ; output ; TTL          ;         ; Y               ;
 ; 78       ; 77         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 79       ; 78         ; --       ; GPIO_7         ; input  ; TTL          ;         ; Y               ;
-; 80       ; 79         ; --       ; GPIO_5         ; input  ; TTL          ;         ; Y               ;
-; 81       ; 80         ; --       ; GPIO_6         ; input  ; TTL          ;         ; Y               ;
+; 79       ; 78         ; --       ; GPIO_D[7]      ; bidir  ; TTL          ;         ; Y               ;
+; 80       ; 79         ; --       ; GPIO_D[5]      ; bidir  ; TTL          ;         ; Y               ;
+; 81       ; 80         ; --       ; GPIO_D[6]      ; bidir  ; TTL          ;         ; Y               ;
 ; 82       ; 81         ; --       ; GND            ; gnd    ;              ;         ;                 ;
 ; 83       ; 82         ; --       ; GND+           ;        ;              ;         ;                 ;
 ; 84       ; 83         ; --       ; GND+           ;        ;              ;         ;                 ;
@@ -311,13 +311,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+----------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                  ;
-+----------------------------+------------+------+------------------------+--------------+
-; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name    ; Library Name ;
-+----------------------------+------------+------+------------------------+--------------+
-; |MSXPi2_Interface_Test     ; 14         ; 64   ; |MSXPi2_Interface_Test ; work         ;
-+----------------------------+------------+------+------------------------+--------------+
++-------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                               ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |MSXPi2                    ; 36         ; 64   ; |MSXPi2             ; work         ;
++----------------------------+------------+------+---------------------+--------------+
 
 
 +---------------------------------+
@@ -349,10 +349,32 @@ Note: User assignments will override these defaults. The user specified values a
 ; WR_n           ; 2              ;
 ; led_s~15       ; 2              ;
 ; comb~2sexp1bal ; 1              ;
+; ~VCC~11        ; 1              ;
+; ~VCC~10        ; 1              ;
+; ~VCC~9         ; 1              ;
+; ~VCC~8         ; 1              ;
+; ~VCC~7         ; 1              ;
+; ~VCC~6         ; 1              ;
+; ~VCC~5         ; 1              ;
+; ~VCC~4         ; 1              ;
 ; ~VCC~3         ; 1              ;
 ; ~VCC~2         ; 1              ;
 ; ~VCC~1         ; 1              ;
 ; ~VCC~0         ; 1              ;
+; ~GND~13        ; 1              ;
+; ~GND~12        ; 1              ;
+; ~GND~11        ; 1              ;
+; ~GND~10        ; 1              ;
+; ~GND~9         ; 1              ;
+; ~GND~8         ; 1              ;
+; ~GND~7         ; 1              ;
+; ~GND~6         ; 1              ;
+; ~GND~5         ; 1              ;
+; ~GND~4         ; 1              ;
+; ~GND~3         ; 1              ;
+; ~GND~2         ; 1              ;
+; ~GND~1         ; 1              ;
+; ~GND~0         ; 1              ;
 ; comb~3         ; 1              ;
 ; d_s[5]~35      ; 1              ;
 ; d_s[5]~31      ; 1              ;
@@ -396,15 +418,16 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------------------------------------------------+
 ; LAB Macrocells                                                       ;
 +----------------------------------------+-----------------------------+
-; Number of Macrocells  (Average = 1.75) ; Number of LABs  (Total = 5) ;
+; Number of Macrocells  (Average = 4.50) ; Number of LABs  (Total = 7) ;
 +----------------------------------------+-----------------------------+
-; 0                                      ; 3                           ;
-; 1                                      ; 2                           ;
-; 2                                      ; 1                           ;
+; 0                                      ; 1                           ;
+; 1                                      ; 1                           ;
+; 2                                      ; 0                           ;
 ; 3                                      ; 0                           ;
-; 4                                      ; 1                           ;
+; 4                                      ; 2                           ;
 ; 5                                      ; 0                           ;
 ; 6                                      ; 1                           ;
+; 7                                      ; 3                           ;
 +----------------------------------------+-----------------------------+
 
 
@@ -413,20 +436,42 @@ Note: User assignments will override these defaults. The user specified values a
 +-----+------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 ; LAB ; Logic Cell ; Input                                                                                                                             ; Output                                         ;
 +-----+------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+;  A  ; LC16       ;                                                                                                                                   ; GPIO_A[4]                                      ;
+;  A  ; LC14       ;                                                                                                                                   ; GPIO_A[5]                                      ;
+;  A  ; LC8        ;                                                                                                                                   ; GPIO_A[12]                                     ;
 ;  A  ; LC5        ; led_s~15, comb~3, comb~2sexp1bal                                                                                                  ; led_s~15, GPIO_21                              ;
+;  A  ; LC11       ;                                                                                                                                   ; GPIO_A[11]                                     ;
+;  A  ; LC13       ;                                                                                                                                   ; GPIO_A[8]                                      ;
 ;  A  ; LC3        ;                                                                                                                                   ; D[7]                                           ;
+;  B  ; LC17       ; RD_n, MREQ_n, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], A[5], A[1], A[2], A[3], A[4], A[6], A[7], A[0], WR_n, IORQ_n  ; led_s~15                                       ;
 ;  B  ; LC19       ; SLTSL, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], MREQ_n, RD_n, A[0], A[5], A[1], A[2], A[3], A[4], A[6], A[7], IORQ_n ; D[0], D[3], D[4], D[5], D[7], D[1], D[2], D[6] ;
 ;  B  ; LC29       ; SLTSL, A[12], A[13], A[0], A[5], A[8], A[9], A[10], A[11], A[14], A[15], A[1], A[2], A[3], A[4], A[6], A[7], RD_n, MREQ_n, IORQ_n ; D[5]                                           ;
 ;  B  ; LC25       ; SLTSL, A[12], A[13], A[0], A[5], A[8], A[9], A[10], A[11], A[14], A[15], A[1], A[2], A[3], A[4], A[6], A[7], RD_n, MREQ_n, IORQ_n ; D[1]                                           ;
-;  B  ; LC17       ; MREQ_n, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], A[0], A[5], A[1], A[2], A[3], A[4], A[6], A[7], WR_n, IORQ_n        ; led_s~15                                       ;
+;  B  ; LC18       ; MREQ_n, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], A[0], A[5], A[1], A[2], A[3], A[4], A[6], A[7], WR_n, IORQ_n        ; led_s~15                                       ;
 ;  B  ; LC27       ;                                                                                                                                   ; D[3]                                           ;
-;  B  ; LC18       ; RD_n, MREQ_n, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], A[5], A[1], A[2], A[3], A[4], A[6], A[7], A[0], WR_n, IORQ_n  ; led_s~15                                       ;
-;  D  ; LC61       ; SLTSL, A[12], A[13], A[0], A[5], A[8], A[9], A[10], A[11], A[14], A[15], A[1], A[2], A[3], A[4], A[6], A[7], RD_n, MREQ_n         ; D[4]                                           ;
 ;  D  ; LC57       ; SLTSL, A[12], A[13], A[0], A[5], A[8], A[9], A[10], A[11], A[14], A[15], A[1], A[2], A[3], A[4], A[6], A[7], RD_n, MREQ_n         ; D[0]                                           ;
 ;  D  ; LC64       ; SLTSL, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], MREQ_n, RD_n, A[0], A[5], A[1], A[2], A[3], A[4], A[6], A[7], IORQ_n ; D[6]                                           ;
 ;  D  ; LC59       ; SLTSL, A[12], A[13], A[8], A[9], A[10], A[11], A[14], A[15], MREQ_n, RD_n, A[0], A[5], A[1], A[2], A[3], A[4], A[6], A[7], IORQ_n ; D[2]                                           ;
+;  D  ; LC61       ; SLTSL, A[12], A[13], A[0], A[5], A[8], A[9], A[10], A[11], A[14], A[15], A[1], A[2], A[3], A[4], A[6], A[7], RD_n, MREQ_n         ; D[4]                                           ;
 ;  E  ; LC77       ;                                                                                                                                   ; BDIR                                           ;
+;  F  ; LC93       ;                                                                                                                                   ; GPIO_A[6]                                      ;
 ;  F  ; LC83       ;                                                                                                                                   ; WAIT_n                                         ;
+;  F  ; LC85       ;                                                                                                                                   ; GPIO_D[0]                                      ;
+;  F  ; LC86       ;                                                                                                                                   ; GPIO_D[1]                                      ;
+;  F  ; LC88       ;                                                                                                                                   ; GPIO_D[2]                                      ;
+;  F  ; LC91       ;                                                                                                                                   ; GPIO_D[3]                                      ;
+;  F  ; LC94       ;                                                                                                                                   ; GPIO_D[4]                                      ;
+;  G  ; LC99       ;                                                                                                                                   ; GPIO_A[10]                                     ;
+;  G  ; LC97       ;                                                                                                                                   ; GPIO_A[7]                                      ;
+;  G  ; LC107      ;                                                                                                                                   ; GPIO_A[13]                                     ;
+;  G  ; LC101      ;                                                                                                                                   ; GPIO_A[9]                                      ;
+;  H  ; LC120      ;                                                                                                                                   ; GPIO_A[0]                                      ;
+;  H  ; LC118      ;                                                                                                                                   ; GPIO_A[1]                                      ;
+;  H  ; LC126      ;                                                                                                                                   ; GPIO_D[5]                                      ;
+;  H  ; LC128      ;                                                                                                                                   ; GPIO_D[6]                                      ;
+;  H  ; LC125      ;                                                                                                                                   ; GPIO_D[7]                                      ;
+;  H  ; LC123      ;                                                                                                                                   ; GPIO_A[3]                                      ;
+;  H  ; LC115      ;                                                                                                                                   ; GPIO_A[2]                                      ;
 +-----+------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 
 
@@ -451,9 +496,9 @@ Note: User assignments will override these defaults. The user specified values a
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EPM7128SLC84-15 for design "MSXPi2"
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 459 megabytes
-    Info: Processing ended: Fri Jul 03 09:53:20 2020
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4684 megabytes
+    Info: Processing ended: Fri Jul 03 23:56:18 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
