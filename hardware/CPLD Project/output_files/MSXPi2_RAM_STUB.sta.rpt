@@ -1,0 +1,612 @@
+TimeQuest Timing Analyzer report for MSXPi2_RAM_STUB
+Fri Jul 03 11:38:42 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'SLTSL'
+ 12. Hold: 'SLTSL'
+ 13. Minimum Pulse Width: 'SLTSL'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Output Enable Times
+ 21. Minimum Output Enable Times
+ 22. Output Disable Times
+ 23. Minimum Output Disable Times
+ 24. Setup Transfers
+ 25. Hold Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; MSXPi2_RAM_STUB                                                   ;
+; Device Family      ; MAX7000S                                                          ;
+; Device Name        ; EPM7128SLC84-15                                                   ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; SLTSL      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SLTSL } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 76.92 MHz ; 76.92 MHz       ; SLTSL      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; SLTSL ; -12.000 ; -192.000      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; SLTSL ; 5.000 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; SLTSL ; -5.500 ; -176.000      ;
++-------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Setup: 'SLTSL'                                                                                       ;
++---------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; -12.000 ; d_s[0]    ; d_s[0]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[0]  ; d_s[0]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[0]  ; d_reg[0] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[1]    ; d_s[1]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[1]  ; d_s[1]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[1]  ; d_reg[1] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[2]    ; d_s[2]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[2]  ; d_s[2]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[2]  ; d_reg[2] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[3]    ; d_s[3]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[3]  ; d_s[3]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[3]  ; d_reg[3] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[4]    ; d_s[4]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[4]  ; d_s[4]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[4]  ; d_reg[4] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[5]    ; d_s[5]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[5]  ; d_s[5]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[5]  ; d_reg[5] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[6]    ; d_s[6]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[6]  ; d_s[6]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[6]  ; d_reg[6] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_s[7]    ; d_s[7]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[7]  ; d_s[7]   ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; d_reg[7]  ; d_reg[7] ; SLTSL        ; SLTSL       ; 1.000        ; 0.000      ; 9.000      ;
++---------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Hold: 'SLTSL'                                                                                      ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; d_s[0]    ; d_s[0]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[0]  ; d_s[0]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[0]  ; d_reg[0] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[1]    ; d_s[1]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[1]  ; d_s[1]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[1]  ; d_reg[1] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[2]    ; d_s[2]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[2]  ; d_s[2]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[2]  ; d_reg[2] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[3]    ; d_s[3]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[3]  ; d_s[3]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[3]  ; d_reg[3] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[4]    ; d_s[4]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[4]  ; d_s[4]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[4]  ; d_reg[4] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[5]    ; d_s[5]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[5]  ; d_s[5]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[5]  ; d_reg[5] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[6]    ; d_s[6]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[6]  ; d_s[6]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[6]  ; d_reg[6] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_s[7]    ; d_s[7]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[7]  ; d_s[7]   ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; d_reg[7]  ; d_reg[7] ; SLTSL        ; SLTSL       ; 0.000        ; 0.000      ; 9.000      ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'SLTSL'                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[0]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[0]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[1]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[1]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[2]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[2]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[3]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[3]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[4]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[4]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[5]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[5]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[6]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[6]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_reg[7]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_reg[7]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[0]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[0]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[1]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[1]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[2]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[2]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[3]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[3]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[4]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[4]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[5]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[5]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[6]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[6]        ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SLTSL ; Fall       ; d_s[7]        ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SLTSL ; Fall       ; d_s[7]        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; SLTSL|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; SLTSL|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[0]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[0]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[1]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[1]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[2]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[2]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[3]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[3]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[4]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[4]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[5]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[5]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[6]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[6]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_reg[7]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_reg[7]|[3]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[0]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[0]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[1]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[1]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[2]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[2]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[3]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[3]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[4]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[4]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[5]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[5]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[6]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[6]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[7]|[20]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[7]|[20]   ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[0]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[1]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[2]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[3]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[4]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[5]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[6]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[7]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[8]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[9]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[10]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[11]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[12]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[13]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[14]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[15]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+; D[*]      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+; RD_n      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+; WR_n      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[0]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[1]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[2]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[3]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[4]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[5]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[6]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[7]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[8]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[9]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[10]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[11]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[12]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[13]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[14]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  A[15]    ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+; D[*]      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+; RD_n      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
+; WR_n      ; SLTSL      ; 4.000 ; 4.000 ; Fall       ; SLTSL           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D[*]      ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D[*]      ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 15.000 ; 15.000 ; Fall       ; SLTSL           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A[14]      ; GPIO_21     ; 15.000 ;        ;        ; 15.000 ;
+; RD_n       ; D[0]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[1]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[2]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[3]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[4]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[5]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[6]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[7]        ;        ; 22.000 ; 22.000 ;        ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A[14]      ; GPIO_21     ; 15.000 ;        ;        ; 15.000 ;
+; RD_n       ; D[0]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[1]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[2]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[3]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[4]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[5]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[6]        ;        ; 22.000 ; 22.000 ;        ;
+; RD_n       ; D[7]        ;        ; 22.000 ; 22.000 ;        ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; D[*]      ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+; D[*]      ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; D[*]      ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000 ;      ; Rise       ; SLTSL           ;
+; D[*]      ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000 ;      ; Fall       ; SLTSL           ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; D[*]      ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+; D[*]      ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; D[*]      ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000    ;           ; Rise       ; SLTSL           ;
+; D[*]      ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[0]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[1]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[2]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[3]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[4]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[5]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[6]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
+;  D[7]     ; SLTSL      ; 22.000    ;           ; Fall       ; SLTSL           ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SLTSL      ; SLTSL    ; 0        ; 0        ; 0        ; 32       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SLTSL      ; SLTSL    ; 0        ; 0        ; 0        ; 32       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 27    ; 27   ;
+; Unconstrained Input Port Paths  ; 177   ; 177  ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 25    ; 25   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Jul 03 11:38:31 2020
+Info: Command: quartus_sta MSXPi2_RAM_STUB -c MSXPi2_RAM_STUB
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'MSXPi2_RAM_STUB.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SLTSL SLTSL
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.000      -192.000 SLTSL 
+Info (332146): Worst-case hold slack is 5.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     5.000         0.000 SLTSL 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -5.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.500      -176.000 SLTSL 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 355 megabytes
+    Info: Processing ended: Fri Jul 03 11:38:42 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:05
+
+

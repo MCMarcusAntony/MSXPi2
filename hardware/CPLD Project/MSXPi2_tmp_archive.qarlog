@@ -1,0 +1,23 @@
+Quartus II Archive log --	F:/github/MSXPi2/hardware/CPLD Project/MSXPi2_tmp_archive.qarlog
+
+Archive:	F:/github/MSXPi2/hardware/CPLD Project/MSXPi2_tmp_archive.qar
+Date:		Fri Jul 03 09:47:58 2020
+Quartus II 64-Bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+
+	=========== Files Selected: ===========
+F:/github/MSXPi2/hardware/CPLD Project/MSXPi2.qpf
+F:/github/MSXPi2/hardware/CPLD Project/MSXPi2.qsf
+F:/github/MSXPi2/hardware/CPLD Project/MSXPi2.vhd
+F:/github/MSXPi2/hardware/CPLD Project/incremental_db/compiled_partitions/MSXPi2.db_info
+F:/github/MSXPi2/hardware/CPLD Project/output_files/Chain2.cdf
+c:/altera/13.0sp1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 6 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Fri Jul 03 09:48:07 2020
+Source archive file:	F:/github/MSXPi2/hardware/CPLD Project/MSXPi2_tmp_archive.qar
+Archive was extracted into	F:/github/MSXPi2/hardware/CPLD Project/
+		 - successfully.
