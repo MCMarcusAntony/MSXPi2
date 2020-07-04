@@ -88,7 +88,7 @@ begin
 	WAIT_n <= sltsl or GPIO_25;
 	BDIR <= 'Z';
 	
-	GPIO_23 <= not sltsl; =	-- RPI CS signal - send interrupt ro RPi
+	GPIO_21 <= not sltsl;	-- RPI CS signal - send interrupt ro RPi
 	GPIO_23 <= WR_n;			-- 1 = read, 0 = write
    GPIO_24 <= MREQ_n;		-- 1 = port access, 0 = memory access
 

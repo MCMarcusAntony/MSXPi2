@@ -128,9 +128,9 @@ GPIO_A[10]                   : 64        : output : TTL               :         
 GPIO_A[9]                    : 65        : output : TTL               :         :           : Y              
 VCCIO                        : 66        : power  :                   : 5.0V    :           :                
 GPIO_27                      : 67        : input  : TTL               :         :           : Y              
-GPIO_23                      : 68        : input  : TTL               :         :           : Y              
+GPIO_23                      : 68        : output : TTL               :         :           : Y              
 GPIO_A[13]                   : 69        : output : TTL               :         :           : Y              
-GPIO_24                      : 70        : input  : TTL               :         :           : Y              
+GPIO_24                      : 70        : output : TTL               :         :           : Y              
 TDO                          : 71        : output : TTL               :         :           : N              
 GND                          : 72        : gnd    :                   :         :           :                
 GPIO_A[2]                    : 73        : output : TTL               :         :           : Y              

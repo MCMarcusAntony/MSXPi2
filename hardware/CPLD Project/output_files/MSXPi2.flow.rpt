@@ -1,5 +1,5 @@
 Flow report for MSXPi2
-Fri Jul 03 23:56:22 2020
+Sat Jul 04 00:22:16 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Fri Jul 03 23:56:20 2020           ;
+; Flow Status               ; Successful - Sat Jul 04 00:22:14 2020           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; MSXPi2                                          ;
 ; Top-level Entity Name     ; MSXPi2                                          ;
 ; Family                    ; MAX7000S                                        ;
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 36 / 128 ( 28 % )                               ;
+; Total macrocells          ; 35 / 128 ( 27 % )                               ;
 ; Total pins                ; 64 / 68 ( 94 % )                                ;
 +---------------------------+-------------------------------------------------+
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/03/2020 23:56:14 ;
+; Start date & time ; 07/04/2020 00:22:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MSXPi2              ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------+--------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                          ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 53447168746495.159381697415752 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 53447168746495.159381853116952 ; --            ; --          ; --         ;
 ; FITTER_EFFORT            ; Standard Fit                   ; Auto Fit      ; --          ; --         ;
 ; OPTIMIZE_HOLD_TIMING     ; Off                            ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; output_files                   ; --            ; --          ; --         ;
@@ -82,9 +82,9 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4609 MB             ; 00:00:01                           ;
 ; Fitter                    ; 00:00:01     ; 1.0                     ; 4684 MB             ; 00:00:01                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4519 MB             ; 00:00:00                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; 4519 MB             ; 00:00:00                           ;
 ; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4513 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:05     ; --                      ; --                  ; 00:00:03                           ;
+; Total                     ; 00:00:04     ; --                      ; --                  ; 00:00:03                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
