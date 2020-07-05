@@ -69,24 +69,29 @@ entity MSXPi2 is
 		rpi_wr : out std_logic; -- MSX access type: 1 = read, 0 = write - GPIO_23 / BCM23
 		rpi_io : out std_logic; -- MSX IO type: 1 = port access, 0 = memory access - GPIO_24 / BCM24
 		rpi_rdy : in std_logic; -- RPI_ready - GPIO_25 / BCM25
-		GPIO_26 : in std_logic; -- BCM26
-		GPIO_27 : in std_logic  -- BCM27
+		rpi_off : in std_logic; -- BCM0
+		GPIO_1 : in std_logic  -- BCM1
+		
 	);
 
 end MSXPi2;
 
 architecture ppl_type of MSXPi2 is
 
-    signal led_s: std_logic;
-	signal access_s: std_logic;
-	signal msxpi_en_s: std_logic;
-	signal d_s: std_logic_vector(7 downto 0);
-begin
-   
-	WAIT_n <= 'Z'; --sltsl or rpi_rdy;
-	BDIR <= 'Z';
+   signal led_s: std_logic;
+   signal access_s: std_logic;
+   signal msxpi_en_s: std_logic;
+   signal d_s: std_logic_vector(7 downto 0);
 	
-	rpi_cs <= '1'  when IORQ_n = '0' and WR_n = '0' and A = x"56" else '0';
+begin
+   	
+	BDIR <= 'Z';	
+	WAIT_n <= rpi_rdy when rpi_off = '0' else
+             '0' when MREQ_n = '0' and Wr_n = '0' and A = x"8000"  else
+				 'Z';
+	
+   rpi_cs <= '1' when MREQ_n = '0' and Wr_n = '0' and A = x"8000" else '0';
+		
 	rpi_wr <= WR_n;			-- 1 = read, 0 = write
    rpi_io <= MREQ_n;		-- 1 = port access, 0 = memory access
 	
@@ -97,3 +102,5 @@ end;
 
 
 
+   
+	

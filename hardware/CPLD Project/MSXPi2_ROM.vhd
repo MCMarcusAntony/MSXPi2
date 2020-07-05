@@ -32,34 +32,38 @@ entity MSXPi2_ROM is
 		WAIT_n : out std_logic;
 		
 		-- Raspberry Pi GPIO
-		GPIO_0 : in std_logic;
-		GPIO_1 : in std_logic;
-		GPIO_2 : in std_logic;
-		GPIO_3 : in std_logic;
-		GPIO_4 : in std_logic;
-		GPIO_5 : in std_logic;
-		GPIO_6 : in std_logic;
-		GPIO_7 : in std_logic;
-		GPIO_8 : in std_logic;
-		GPIO_9 : in std_logic;
-		GPIO_10 : in std_logic;
-		GPIO_11 : in std_logic;
-		GPIO_12 : in std_logic;
-		GPIO_13 : in std_logic;
-		GPIO_14 : in std_logic;
-		GPIO_15 : in std_logic;
-		GPIO_16 : in std_logic;
-		GPIO_17 : in std_logic;
-		GPIO_18 : in std_logic;
-		GPIO_19 : in std_logic;
-		GPIO_20 : in std_logic;
-		GPIO_21 : out std_logic;
-		GPIO_22 : in std_logic;
-		GPIO_23 : in std_logic;
-		GPIO_24 : in std_logic;
-		GPIO_25 : in std_logic;
-		GPIO_26 : in std_logic;
-		GPIO_27 : in std_logic
+		GPIO_D : inout std_logic_vector(7 downto 0);
+		GPIO_A : out std_logic_vector(13 downto 0);
+		--GPIO_D[0] : inout std_logic; -- D0 / GPIO_26 / BCM26
+		--GPIO_D[1] : inout std_logic; -- D1 / GPIO_27 / BCM27
+		--GPIO_D[2] : inout std_logic; -- D2 / GPIO_2 / BCM2
+		--GPIO_D[3] : inout std_logic; -- D3 / GPIO_3 / BCM3
+		--GPIO_D[4] : inout std_logic; -- D4 / GPIO_4 / BCM4
+		--GPIO_D[5] : inout std_logic; -- D5 / GPIO_5 / BCM5
+		--GPIO_D[6] : inout std_logic; -- D6 / GPIO_6 / BCM6
+		--GPIO_D[7] : inout std_logic; -- D7 / GPIO_7 / BCM7
+		--GPIO_A[0] : out std_logic; -- A0 / GPIO_8 / BCM8
+		--GPIO_A[1] : out std_logic; -- A1 / GPIO_9 / BCM9
+		--GPIO_A[2] : out std_logic; -- A2 / GPIO_10 / BCM10
+		--GPIO_A[3] : out std_logic; -- A3 / GPIO_11 / BCM11
+		--GPIO_A[4] : out std_logic; -- A4 / GPIO_12 / BCM12
+		--GPIO_A[5] : out std_logic; -- A5 / GPIO_13 / BCM13
+		--GPIO_A[6] : out std_logic; -- A6 / GPIO_14 / BCM14
+		--GPIO_A[7] : out std_logic; -- A7 / GPIO_15 / BCM15
+		--GPIO_A[8] : out std_logic; -- A8 / GPIO_16 / BCM16
+		--GPIO_A[9] : out std_logic; -- A9 / GPIO_17 / BCM17
+		--GPIO_A[10] : out std_logic; -- A10 / GPIO_18 / BCM18
+		--GPIO_A[11] : out std_logic; -- A11 / GPIO_19 / BCM19
+		--GPIO_A[12] : out std_logic; -- A12 / GPIO_20 / BCM20
+		--GPIO_A[13] : out std_logic; -- A13 / GPIO_22 / BCM22
+		
+		rpi_cs : out std_logic; -- RPI CS signal - send interrupt to RPi - GPIO_21 / BCM21
+		rpi_wr : out std_logic; -- MSX access type: 1 = read, 0 = write - GPIO_23 / BCM23
+		rpi_io : out std_logic; -- MSX IO type: 1 = port access, 0 = memory access - GPIO_24 / BCM24
+		rpi_rdy : in std_logic; -- RPI_ready - GPIO_25 / BCM25
+		GPIO_0 : in std_logic; -- BCM0
+		GPIO_1 : in std_logic  -- BCM1
+		
 	);
 
 end MSXPi2_ROM;
@@ -67,17 +71,22 @@ end MSXPi2_ROM;
 architecture ppl_type of MSXPi2_ROM is
 
     signal led_s: std_logic;
-	 signal access_s: std_logic;
-	 signal msxpi_en_s: std_logic;
-	 signal d_s: std_logic_vector(7 downto 0);
+	signal access_s: std_logic;
+	signal msxpi_en_s: std_logic;
+	signal d_s: std_logic_vector(7 downto 0);
 begin
 
-   GPIO_21 <= a(14);
-	WAIT_n <= 'Z';
-	BDIR <= 'Z';
+   rpi_cs <= '1' when SLTSL = '0' and RD_n = '0' else '0';
+   WAIT_n <= rpi_rdy;
+				 
+   BDIR <= 'Z';
 
 	D <= d_s when SLTSL = '0' and RD_n = '0' else (others => 'Z');
 	
+   GPIO_D <= d_s;
+	GPIO_A <= A(13 downto 0);
+	rpi_wr <= WR_n;
+	rpi_io <= MREQ_n;
 	
 -- This following process implements a rom memory, containing this Z80 code:
 --

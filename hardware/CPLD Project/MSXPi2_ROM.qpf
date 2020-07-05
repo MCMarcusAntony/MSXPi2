@@ -18,13 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 10:04:30  July 03, 2020
+# Date created = 04:02:27  July 05, 2020
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "10:04:30  July 03, 2020"
+DATE = "04:02:27  July 05, 2020"
 
 # Revisions
 
+PROJECT_REVISION = "MSXPI2_ROM_rev1"
 PROJECT_REVISION = "MSXPI2_ROM"

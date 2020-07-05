@@ -105,16 +105,16 @@ set_location_assignment PIN_15 -to D[5]
 set_location_assignment PIN_33 -to D[6]
 set_location_assignment PIN_12 -to D[7]
 
-set_location_assignment PIN_11 -to GPIO_21
-set_location_assignment PIN_68 -to GPIO_23
-set_location_assignment PIN_70 -to GPIO_24
-set_location_assignment PIN_74 -to GPIO_25
+set_location_assignment PIN_11 -to rpi_cs
+set_location_assignment PIN_68 -to rpi_wr
+set_location_assignment PIN_70 -to rpi_io
+set_location_assignment PIN_74 -to rpi_rdy
 
 # bcm0 and bcm1 are reserved for eeprom stuff on the RPI, and should not had been used
-set_location_assignment PIN_55 -to GPIO_0
 set_location_assignment PIN_56 -to GPIO_1
 
 set_global_assignment -name VHDL_FILE MSXPi2.vhd
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING OFF
 set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_location_assignment PIN_55 -to rpi_off

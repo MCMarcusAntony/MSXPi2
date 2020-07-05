@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MSXPi2
-Sun Jul 05 02:18:44 2020
+Sun Jul 05 08:11:01 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -39,12 +39,12 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Jul 05 02:18:43 2020           ;
+; Analysis & Synthesis Status ; Successful - Sun Jul 05 08:11:01 2020           ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name               ; MSXPi2                                          ;
 ; Top-level Entity Name       ; MSXPi2                                          ;
 ; Family                      ; MAX7000S                                        ;
-; Total macrocells            ; 35                                              ;
+; Total macrocells            ; 36                                              ;
 ; Total pins                  ; 60                                              ;
 +-----------------------------+-------------------------------------------------+
 
@@ -119,18 +119,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; MSXPi2.vhd                       ; yes             ; User VHDL File  ; C:/Users/Elite/Desktop/Dev/github/MSXPi2/hardware/CPLD Project/MSXPi2.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                             ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                      ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+; MSXPi2.vhd                       ; yes             ; User VHDL File  ; F:/github/MSXPi2/hardware/CPLD Project/MSXPi2.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -138,13 +138,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 35                   ;
+; Logic cells          ; 36                   ;
 ; Total registers      ; 0                    ;
 ; I/O pins             ; 60                   ;
-; Maximum fan-out node ; A[0]~14              ;
-; Maximum fan-out      ; 1                    ;
-; Total fan-out        ; 59                   ;
-; Average fan-out      ; 0.62                 ;
+; Maximum fan-out node ; A[0]                 ;
+; Maximum fan-out      ; 3                    ;
+; Total fan-out        ; 99                   ;
+; Average fan-out      ; 1.03                 ;
 +----------------------+----------------------+
 
 
@@ -153,7 +153,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+------------+------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+------------+------+---------------------+--------------+
-; |MSXPi2                    ; 35         ; 60   ; |MSXPi2             ; work         ;
+; |MSXPi2                    ; 36         ; 60   ; |MSXPi2             ; work         ;
 +----------------------------+------------+------+---------------------+--------------+
 
 
@@ -163,14 +163,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jul 05 02:18:40 2020
+    Info: Processing started: Sun Jul 05 08:10:54 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MSXPi2 -c MSXPi2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file msxpi2.vhd
     Info (12022): Found design unit 1: MSXPi2-ppl_type
     Info (12023): Found entity 1: MSXPi2
 Info (12127): Elaborating entity "MSXPi2" for the top level hierarchy
-Warning (10620): VHDL warning at MSXPi2.vhd(89): comparison between unequal length operands always returns FALSE
 Warning (10665): Bidirectional port "D[7]" at MSXPi2.vhd(31) has a one-way connection to bidirectional port "GPIO_D[7]"
 Warning (10665): Bidirectional port "D[6]" at MSXPi2.vhd(31) has a one-way connection to bidirectional port "GPIO_D[6]"
 Warning (10665): Bidirectional port "D[5]" at MSXPi2.vhd(31) has a one-way connection to bidirectional port "GPIO_D[5]"
@@ -197,27 +196,21 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_D[5]~synth"
     Warning (13010): Node "GPIO_D[6]~synth"
     Warning (13010): Node "GPIO_D[7]~synth"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "rpi_cs" is stuck at GND
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "A[14]"
-    Warning (15610): No output dependent on input pin "A[15]"
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RD_n"
     Warning (15610): No output dependent on input pin "IORQ_n"
     Warning (15610): No output dependent on input pin "M1"
     Warning (15610): No output dependent on input pin "SLTSL"
-    Warning (15610): No output dependent on input pin "rpi_rdy"
-    Warning (15610): No output dependent on input pin "GPIO_26"
-    Warning (15610): No output dependent on input pin "GPIO_27"
-Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "GPIO_1"
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 25 input pins
     Info (21059): Implemented 19 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21063): Implemented 35 macrocells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 4609 megabytes
-    Info: Processing ended: Sun Jul 05 02:18:44 2020
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21063): Implemented 36 macrocells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 452 megabytes
+    Info: Processing ended: Sun Jul 05 08:11:01 2020
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 

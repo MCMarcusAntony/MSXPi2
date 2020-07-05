@@ -1,5 +1,5 @@
 Assembler report for MSXPi2
-Sun Jul 05 02:18:47 2020
+Sun Jul 05 08:11:12 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Elite/Desktop/Dev/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pof
+  5. Assembler Device Options: F:/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Jul 05 02:18:47 2020 ;
+; Assembler Status      ; Successful - Sun Jul 05 08:11:12 2020 ;
 ; Revision Name         ; MSXPi2                                ;
 ; Top-level Entity Name ; MSXPi2                                ;
 ; Family                ; MAX7000S                              ;
@@ -73,24 +73,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                              ;
-+----------------------------------------------------------------------------------------+
-; File Name                                                                              ;
-+----------------------------------------------------------------------------------------+
-; C:/Users/Elite/Desktop/Dev/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pof ;
-+----------------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Assembler Generated Files                                      ;
++----------------------------------------------------------------+
+; File Name                                                      ;
++----------------------------------------------------------------+
+; F:/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pof ;
++----------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Elite/Desktop/Dev/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pof ;
-+----------------+-------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                         ;
-+----------------+-------------------------------------------------------------------------------------------------+
-; Device         ; EPM7128SLC84-15                                                                                 ;
-; JTAG usercode  ; 0x00000000                                                                                      ;
-; Checksum       ; 0x001A8794                                                                                      ;
-+----------------+-------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Assembler Device Options: F:/github/MSXPi2/hardware/CPLD Project/output_files/MSXPi2.pof ;
++----------------+-------------------------------------------------------------------------+
+; Option         ; Setting                                                                 ;
++----------------+-------------------------------------------------------------------------+
+; Device         ; EPM7128SLC84-15                                                         ;
+; JTAG usercode  ; 0x00000000                                                              ;
+; Checksum       ; 0x001A87FD                                                              ;
++----------------+-------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -99,13 +99,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jul 05 02:18:47 2020
+    Info: Processing started: Sun Jul 05 08:11:10 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MSXPi2 -c MSXPi2
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4519 megabytes
-    Info: Processing ended: Sun Jul 05 02:18:48 2020
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 364 megabytes
+    Info: Processing ended: Sun Jul 05 08:11:12 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

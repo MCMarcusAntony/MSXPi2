@@ -71,7 +71,7 @@ GND                          : 7         : gnd    :                   :         
 GPIO_A[11]                   : 8         : output : TTL               :         :           : Y              
 GPIO_A[12]                   : 9         : output : TTL               :         :           : Y              
 GPIO_D[0]                    : 10        : bidir  : TTL               :         :           : Y              
-GPIO_26                      : 11        : input  : TTL               :         :           : N              
+rpi_cs                       : 11        : output : TTL               :         :           : Y              
 D[7]                         : 12        : bidir  : TTL               :         :           : Y              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
@@ -115,8 +115,8 @@ BDIR                         : 51        : output : TTL               :         
 SLTSL                        : 52        : input  : TTL               :         :           : Y              
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 WAIT_n                       : 54        : output : TTL               :         :           : Y              
-rpi_wr                       : 55        : output : TTL               :         :           : N              
-rpi_cs                       : 56        : output : TTL               :         :           : N              
+rpi_off                      : 55        : input  : TTL               :         :           : Y              
+GPIO_1                       : 56        : input  : TTL               :         :           : Y              
 GPIO_D[2]                    : 57        : bidir  : TTL               :         :           : Y              
 GPIO_D[3]                    : 58        : bidir  : TTL               :         :           : Y              
 GND                          : 59        : gnd    :                   :         :           :                
@@ -128,13 +128,13 @@ GPIO_A[10]                   : 64        : output : TTL               :         
 GPIO_A[9]                    : 65        : output : TTL               :         :           : Y              
 VCCIO                        : 66        : power  :                   : 5.0V    :           :                
 GPIO_D[1]                    : 67        : bidir  : TTL               :         :           : Y              
-rpi_io                       : 68        : output : TTL               :         :           : N              
+rpi_wr                       : 68        : output : TTL               :         :           : Y              
 GPIO_A[13]                   : 69        : output : TTL               :         :           : Y              
-rpi_rdy                      : 70        : input  : TTL               :         :           : N              
+rpi_io                       : 70        : output : TTL               :         :           : Y              
 TDO                          : 71        : output : TTL               :         :           : N              
 GND                          : 72        : gnd    :                   :         :           :                
 GPIO_A[2]                    : 73        : output : TTL               :         :           : Y              
-GPIO_27                      : 74        : input  : TTL               :         :           : N              
+rpi_rdy                      : 74        : input  : TTL               :         :           : Y              
 GPIO_A[1]                    : 75        : output : TTL               :         :           : Y              
 GPIO_A[0]                    : 76        : output : TTL               :         :           : Y              
 GPIO_A[3]                    : 77        : output : TTL               :         :           : Y              
