@@ -87,8 +87,8 @@ begin
 	BDIR <= 'Z';
 	
 	rpi_cs <= '1'  when IORQ_n = '0' and WR_n = '0' and A = x"56" else '0';
-	--rpi_wr <= WR_n;			-- 1 = read, 0 = write
-   --rpi_io <= MREQ_n;		-- 1 = port access, 0 = memory access
+	rpi_wr <= WR_n;			-- 1 = read, 0 = write
+   rpi_io <= MREQ_n;		-- 1 = port access, 0 = memory access
 	
 	GPIO_D <= D;
 	GPIO_A <= A(13 downto 0);

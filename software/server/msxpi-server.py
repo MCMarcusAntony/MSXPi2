@@ -51,8 +51,8 @@ cs = 21
 wr = 23
 io = 24
 rdy = 25
-res1 = 30
-res2 = 31
+res1 = 30 # GPIO0 / ID_SD : These two pins are reserved, but may be posible
+res2 = 31 # GPIO1 / ID?SC : to use them for output only - to be tested.
 
 def init_gpio():
 # Pin Setup:
