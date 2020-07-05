@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MSXPi2
-Sat Jul 04 00:22:16 2020
+Sat Jul 04 10:13:47 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -64,7 +64,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -111,30 +111,64 @@ No paths to report.
 No paths to report.
 
 
-+--------------------------------------------------------------+
-; Propagation Delay                                            ;
-+------------+-------------+--------+--------+--------+--------+
-; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+------------+-------------+--------+--------+--------+--------+
-; GPIO_25    ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
-; MREQ_n     ; GPIO_24     ; 15.000 ;        ;        ; 15.000 ;
-; SLTSL      ; GPIO_21     ;        ; 15.000 ; 15.000 ;        ;
-; SLTSL      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
-; WR_n       ; GPIO_23     ; 15.000 ;        ;        ; 15.000 ;
-+------------+-------------+--------+--------+--------+--------+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; A[0]       ; GPIO_A[0]   ; 15.000 ;    ;    ; 15.000 ;
+; A[1]       ; GPIO_A[1]   ; 15.000 ;    ;    ; 15.000 ;
+; A[2]       ; GPIO_A[2]   ; 15.000 ;    ;    ; 15.000 ;
+; A[3]       ; GPIO_A[3]   ; 15.000 ;    ;    ; 15.000 ;
+; A[4]       ; GPIO_A[4]   ; 15.000 ;    ;    ; 15.000 ;
+; A[5]       ; GPIO_A[5]   ; 15.000 ;    ;    ; 15.000 ;
+; A[6]       ; GPIO_A[6]   ; 15.000 ;    ;    ; 15.000 ;
+; A[7]       ; GPIO_A[7]   ; 15.000 ;    ;    ; 15.000 ;
+; A[8]       ; GPIO_A[8]   ; 15.000 ;    ;    ; 15.000 ;
+; A[9]       ; GPIO_A[9]   ; 15.000 ;    ;    ; 15.000 ;
+; A[10]      ; GPIO_A[10]  ; 15.000 ;    ;    ; 15.000 ;
+; A[11]      ; GPIO_A[11]  ; 15.000 ;    ;    ; 15.000 ;
+; A[12]      ; GPIO_A[12]  ; 15.000 ;    ;    ; 15.000 ;
+; A[13]      ; GPIO_A[13]  ; 15.000 ;    ;    ; 15.000 ;
+; D[0]       ; GPIO_D[0]   ; 15.000 ;    ;    ; 15.000 ;
+; D[1]       ; GPIO_D[1]   ; 15.000 ;    ;    ; 15.000 ;
+; D[2]       ; GPIO_D[2]   ; 15.000 ;    ;    ; 15.000 ;
+; D[3]       ; GPIO_D[3]   ; 15.000 ;    ;    ; 15.000 ;
+; D[4]       ; GPIO_D[4]   ; 15.000 ;    ;    ; 15.000 ;
+; D[5]       ; GPIO_D[5]   ; 15.000 ;    ;    ; 15.000 ;
+; D[6]       ; GPIO_D[6]   ; 15.000 ;    ;    ; 15.000 ;
+; D[7]       ; GPIO_D[7]   ; 15.000 ;    ;    ; 15.000 ;
++------------+-------------+--------+----+----+--------+
 
 
-+--------------------------------------------------------------+
-; Minimum Propagation Delay                                    ;
-+------------+-------------+--------+--------+--------+--------+
-; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+------------+-------------+--------+--------+--------+--------+
-; GPIO_25    ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
-; MREQ_n     ; GPIO_24     ; 15.000 ;        ;        ; 15.000 ;
-; SLTSL      ; GPIO_21     ;        ; 15.000 ; 15.000 ;        ;
-; SLTSL      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
-; WR_n       ; GPIO_23     ; 15.000 ;        ;        ; 15.000 ;
-+------------+-------------+--------+--------+--------+--------+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; A[0]       ; GPIO_A[0]   ; 15.000 ;    ;    ; 15.000 ;
+; A[1]       ; GPIO_A[1]   ; 15.000 ;    ;    ; 15.000 ;
+; A[2]       ; GPIO_A[2]   ; 15.000 ;    ;    ; 15.000 ;
+; A[3]       ; GPIO_A[3]   ; 15.000 ;    ;    ; 15.000 ;
+; A[4]       ; GPIO_A[4]   ; 15.000 ;    ;    ; 15.000 ;
+; A[5]       ; GPIO_A[5]   ; 15.000 ;    ;    ; 15.000 ;
+; A[6]       ; GPIO_A[6]   ; 15.000 ;    ;    ; 15.000 ;
+; A[7]       ; GPIO_A[7]   ; 15.000 ;    ;    ; 15.000 ;
+; A[8]       ; GPIO_A[8]   ; 15.000 ;    ;    ; 15.000 ;
+; A[9]       ; GPIO_A[9]   ; 15.000 ;    ;    ; 15.000 ;
+; A[10]      ; GPIO_A[10]  ; 15.000 ;    ;    ; 15.000 ;
+; A[11]      ; GPIO_A[11]  ; 15.000 ;    ;    ; 15.000 ;
+; A[12]      ; GPIO_A[12]  ; 15.000 ;    ;    ; 15.000 ;
+; A[13]      ; GPIO_A[13]  ; 15.000 ;    ;    ; 15.000 ;
+; D[0]       ; GPIO_D[0]   ; 15.000 ;    ;    ; 15.000 ;
+; D[1]       ; GPIO_D[1]   ; 15.000 ;    ;    ; 15.000 ;
+; D[2]       ; GPIO_D[2]   ; 15.000 ;    ;    ; 15.000 ;
+; D[3]       ; GPIO_D[3]   ; 15.000 ;    ;    ; 15.000 ;
+; D[4]       ; GPIO_D[4]   ; 15.000 ;    ;    ; 15.000 ;
+; D[5]       ; GPIO_D[5]   ; 15.000 ;    ;    ; 15.000 ;
+; D[6]       ; GPIO_D[6]   ; 15.000 ;    ;    ; 15.000 ;
+; D[7]       ; GPIO_D[7]   ; 15.000 ;    ;    ; 15.000 ;
++------------+-------------+--------+----+----+--------+
 
 
 -------------------
@@ -162,10 +196,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 5     ; 5    ;
-; Unconstrained Output Ports      ; 4     ; 4    ;
-; Unconstrained Output Port Paths ; 5     ; 5    ;
+; Unconstrained Input Ports       ; 22    ; 22   ;
+; Unconstrained Input Port Paths  ; 22    ; 22   ;
+; Unconstrained Output Ports      ; 22    ; 22   ;
+; Unconstrained Output Port Paths ; 22    ; 22   ;
 +---------------------------------+-------+------+
 
 
@@ -175,7 +209,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 04 00:22:15 2020
+    Info: Processing started: Sat Jul 04 10:13:43 2020
 Info: Command: quartus_sta MSXPi2 -c MSXPi2
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -198,9 +232,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4513 megabytes
-    Info: Processing ended: Sat Jul 04 00:22:16 2020
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 356 megabytes
+    Info: Processing ended: Sat Jul 04 10:13:47 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
 
 
