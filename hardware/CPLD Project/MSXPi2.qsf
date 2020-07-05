@@ -56,8 +56,9 @@ set_location_assignment PIN_52 -to SLTSL
 set_location_assignment PIN_54 -to WAIT_n
 set_location_assignment PIN_29 -to WR_n
 
-set_location_assignment PIN_55 -to GPIO_D[0]
-set_location_assignment PIN_56 -to GPIO_D[1]
+
+set_location_assignment PIN_10 -to GPIO_D[0]
+set_location_assignment PIN_67 -to GPIO_D[1]
 set_location_assignment PIN_57 -to GPIO_D[2]
 set_location_assignment PIN_58 -to GPIO_D[3]
 set_location_assignment PIN_61 -to GPIO_D[4]
@@ -108,8 +109,10 @@ set_location_assignment PIN_11 -to GPIO_21
 set_location_assignment PIN_68 -to GPIO_23
 set_location_assignment PIN_70 -to GPIO_24
 set_location_assignment PIN_74 -to GPIO_25
-set_location_assignment PIN_10 -to GPIO_26
-set_location_assignment PIN_67 -to GPIO_27
+
+# bcm0 and bcm1 are reserved for eeprom stuff on the RPI, and should not had been used
+set_location_assignment PIN_55 -to GPIO_0
+set_location_assignment PIN_56 -to GPIO_1
 
 set_global_assignment -name VHDL_FILE MSXPi2.vhd
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
