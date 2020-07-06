@@ -95,11 +95,14 @@ begin
 	
 	WAIT_n <= wait_n_s;
 	
-	msxpi_select <= '1' when IORQ_n = '0' and Wr_n = '0' and A(7 downto 0) = x"56" else '0';
+	msxpi_select <= --'1' when (IORQ_n = '0' and Wr_n = '0' and A(7 downto 0) = x"56") else  
+						 '1' when (MREQ_n = '0' and WR_n = '0' and A = x"10EA") else
+						 --'1' when (MREQ_n = '0' and WR_n = '0' and A = x"D000") else
+						 '0';
 	
 	process(msxpi_select,rpi_rdy,rpi_on_s)
 	begin
-		if (rpi_on_s = '0' or rpi_rdy = '1' or msxpi_seclect = '0') then
+		if (rpi_on_s = '0' or rpi_rdy = '1') then
 			wait_n_s <= 'Z';
 			cs_s <= '0';
 		elsif (msxpi_select'event and msxpi_select = '1') then
