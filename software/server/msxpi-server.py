@@ -1,26 +1,9 @@
-# External module imports
 import RPi.GPIO as GPIO
-import time
-import subprocess
-import urllib2
 import mmap
-import fcntl,os
-import sys
-from subprocess import Popen,PIPE,STDOUT
-from HTMLParser import HTMLParser
-import datetime
-import time
-import glob
-import array
-import socket
-import errno
-import select
-import base64
-from random import randint
+import os
 
 version = "0.1"
 build   = "20200704.00000"
-TRANSBLOCKSIZE = 1024
 
 # Pin Definitons
 d0 = 26
@@ -86,7 +69,7 @@ def init_gpio():
     GPIO.setup(a12, GPIO.IN)
     GPIO.setup(a13, GPIO.IN)
 
-def spi_transfer(byte_out=0):
+def msxpi_bus_access(byte_out=0):
     addr = 0
     data = 0
     wr_n = 0
@@ -113,40 +96,92 @@ def spi_transfer(byte_out=0):
     print("data:",hex(data))
     print("wr_n:",hex(wr_n))
     print("mreq_n:",hex(mreq_n))
-
     return addr,data,wr_n,rd_n,iorq_n,mreq_n
 
-""" ============================================================================
-    msxpi-server.py
-    main program starts here
-    ============================================================================
-"""
+def rom_sim():
+    # read A bus
+    for bit in [a13,a12,a11,a10,a9,a8,a7,a6,a5,a4,a3,a2,a1,a0]:
+        addr = addr << 1
+        addr = addr | GPIO.input(bit)
+    
+    # Get the byte form the ROM file
+    byte = rom_buffer[addr]
+    
+    # Switch D bus to OUTPUT mode
+    GPIO.setup(d0, GPIO.OUT)
+    GPIO.setup(d1, GPIO.OUT)
+    GPIO.setup(d2, GPIO.OUT)
+    GPIO.setup(d3, GPIO.OUT)
+    GPIO.setup(d4, GPIO.OUT)
+    GPIO.setup(d5, GPIO.OUT)
+    GPIO.setup(d6, GPIO.OUT)
+    GPIO.setup(d7, GPIO.OUT)
+    
+    # Get the byte from the ROM file
+    byte = rombuffer[addr]
+    
+    nibble = 0x80
+    for bit in [d7,d6,d5,d4,d3,d2,d1,d0]:
+    #print("Nibble:",hex(nibble))
+    if (byte & nibble):
+        GPIO.output(bit, GPIO.HIGH)
+        print("1", end = '')
+    else:
+        GPIO.output(bit, GPIO.LOW)
+        print("0", end = '')
+            
+    nibble = nibble >> 1
 
-def callback_gpio(channel):
-    print("*")
-    global interrupt, msx_address,bytein, byteout
-    # "r" receive data from MSX
-    spi_transfer()
-
-    print("-")
+    # test this:
+	# GPIO.output(d0,byte & 0x1)
+	# GPIO.output(d1,byte & 0x2)
+	# GPIO.output(d2,byte & 0x4)
+	# GPIO.output(d3,byte & 0x8)
+	# GPIO.output(d4,byte & 0x10)
+	# GPIO.output(d5,byte & 0x20)
+	# GPIO.output(d6,byte & 0x40)
+	# GPIO.output(d7,byte & 0x80)
+	
+    # Pulse RPI_READY signal for CPLD know that RPI finished procesing
     GPIO.output(rdy, GPIO.LOW)
     GPIO.output(rdy, GPIO.HIGH)
     GPIO.output(rdy, GPIO.LOW)
 
+    # Switch D bus to INPUT mode
+    GPIO.setup(d0, GPIO.IN)
+    GPIO.setup(d1, GPIO.IN)
+    GPIO.setup(d2, GPIO.IN)
+    GPIO.setup(d3, GPIO.IN)
+    GPIO.setup(d4, GPIO.IN)
+    GPIO.setup(d5, GPIO.IN)
+    GPIO.setup(d6, GPIO.IN)
+    GPIO.setup(d7, GPIO.IN)
+    
+def rom_buffer(filename, access=mmap.ACCESS_WRITE):
+    print "rom_buffer:Starting"
+    size = os.path.getsize(filename)
+    if (size>0):
+        fd = os.open(filename, os.O_RDWR)
+        rc = mmap.mmap(fd, size, access=access)
+    else:
+        rc = RC_FAILED
+    return rc
+
+# ========================================================
+# main program starts here
+# ========================================================
 init_gpio()
 GPIO.output(rdy, GPIO.LOW)
 GPIO.output(rdy, GPIO.HIGH)
 GPIO.output(rdy, GPIO.LOW)
 
-print("rdy:",GPIO.input(rdy))
-print("rpi_on",GPIO.input(rdy))
-GPIO.add_event_detect(cs, GPIO.RISING, callback=callback_gpio)
+GPIO.add_event_detect(cs, GPIO.RISING, callback=rom_sim)
 GPIO.output(rpi_on, GPIO.LOW)
 print "GPIO Initialized\n"
 print "Starting MSXPi2 Server Version ",version,"Build",build
 
-print("rdy:",GPIO.input(rdy))
-print("rpi_on",GPIO.input(rdy))
+rombuffer = rom_buffer("/home/pi/msxpi/games/roadf.rom")
+
 print "st_recvcmd: waiting command"
 try:
     while 1:
