@@ -62,7 +62,7 @@ CHIP  "MSXPi2"  ASSIGNED TO AN: EPM7128SLC84-15
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND+                         : 1         :        :                   :         :           :                
-rpi_on                       : 2         : input  : TTL               :         :           : N              
+GND+                         : 2         :        :                   :         :           :                
 VCCINT                       : 3         : power  :                   : 5.0V    :           :                
 rpi_a[4]                     : 4         : output : TTL               :         :           : Y              
 rpi_a[5]                     : 5         : output : TTL               :         :           : Y              
@@ -115,7 +115,7 @@ BDIR                         : 51        : output : TTL               :         
 SLTSL                        : 52        : input  : TTL               :         :           : Y              
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 WAIT_n                       : 54        : output : TTL               :         :           : Y              
-RESERVED                     : 55        :        :                   :         :           :                
+rpi_on                       : 55        : input  : TTL               :         :           : N              
 GPIO_1                       : 56        : input  : TTL               :         :           : Y              
 rpi_d[2]                     : 57        : bidir  : TTL               :         :           : Y              
 rpi_d[3]                     : 58        : bidir  : TTL               :         :           : Y              

@@ -2,215 +2,59 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Setup 'A[10]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[11]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[12]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[13]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[14]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[15]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[1]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[2]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[3]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[4]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[5]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'A[7]'
-Slack : -21.000
-TNS   : -504.000
-
-Type  : Setup 'MREQ_n'
-Slack : -21.000
-TNS   : -504.000
+Type  : Setup 'A[0]'
+Slack : -21.500
+TNS   : -344.000
 
 Type  : Setup 'WR_n'
-Slack : -21.000
-TNS   : -504.000
+Slack : -21.500
+TNS   : -344.000
 
-Type  : Setup 'A[0]'
-Slack : -12.000
-TNS   : -288.000
-
-Type  : Setup 'A[6]'
-Slack : -12.000
-TNS   : -288.000
-
-Type  : Setup 'A[8]'
-Slack : -12.000
-TNS   : -288.000
-
-Type  : Setup 'A[9]'
-Slack : -12.000
-TNS   : -288.000
-
-Type  : Hold 'A[0]'
-Slack : -13.000
-TNS   : -204.000
-
-Type  : Hold 'A[6]'
-Slack : -13.000
-TNS   : -204.000
-
-Type  : Hold 'A[8]'
-Slack : -13.000
-TNS   : -204.000
-
-Type  : Hold 'A[9]'
-Slack : -13.000
-TNS   : -204.000
+Type  : Setup 'A[10]'
+Slack : -12.500
+TNS   : -200.000
 
 Type  : Hold 'A[10]'
-Slack : -4.000
-TNS   : -48.000
+Slack : -13.000
+TNS   : -91.000
 
-Type  : Hold 'A[11]'
+Type  : Hold 'A[0]'
 Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[12]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[13]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[14]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[15]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[1]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[2]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[3]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[4]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[5]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'A[7]'
-Slack : -4.000
-TNS   : -48.000
-
-Type  : Hold 'MREQ_n'
-Slack : -4.000
-TNS   : -48.000
+TNS   : -12.000
 
 Type  : Hold 'WR_n'
 Slack : -4.000
-TNS   : -48.000
+TNS   : -12.000
 
-Type  : Minimum Pulse Width 'A[0]'
-Slack : -5.500
-TNS   : -286.000
+Type  : Recovery 'A[0]'
+Slack : -25.500
+TNS   : -204.000
+
+Type  : Recovery 'WR_n'
+Slack : -25.500
+TNS   : -204.000
+
+Type  : Recovery 'A[10]'
+Slack : -16.500
+TNS   : -132.000
+
+Type  : Removal 'A[10]'
+Slack : 0.000
+TNS   : 0.000
+
+Type  : Removal 'A[0]'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Removal 'WR_n'
+Slack : 9.000
+TNS   : 0.000
 
 Type  : Minimum Pulse Width 'A[10]'
 Slack : -5.500
-TNS   : -286.000
+TNS   : -572.000
 
-Type  : Minimum Pulse Width 'A[11]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[12]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[13]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[14]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[15]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[1]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[2]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[3]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[4]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[5]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[6]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[7]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[8]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'A[9]'
-Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'MREQ_n'
+Type  : Minimum Pulse Width 'A[0]'
 Slack : -5.500
 TNS   : -286.000
 

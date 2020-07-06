@@ -1,9 +1,9 @@
-Fitter Status : Successful - Mon Jul 06 10:45:35 2020
+Fitter Status : Successful - Mon Jul 06 11:04:53 2020
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : MSXPi2
 Top-level Entity Name : MSXPi2
 Family : MAX7000S
 Device : EPM7128SLC84-15
 Timing Models : Final
-Total macrocells : 40 / 128 ( 31 % )
+Total macrocells : 38 / 128 ( 30 % )
 Total pins : 64 / 68 ( 94 % )

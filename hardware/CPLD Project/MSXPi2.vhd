@@ -87,24 +87,30 @@ architecture ppl_type of MSXPi2 is
 	signal io_s: std_logic;
 	signal rpi_on_s: std_logic;
 	signal rpi_rdy_s: std_logic;
-	
+	signal msxpi_read_rom: std_logic;
+	signal msxpi_write_mem: std_logic;
+	signal msxpi_write_io: std_logic;
 begin
 
 	rpi_on_s <= not rpi_on;
 	BDIR <= 'Z';   		
-	
 	WAIT_n <= wait_n_s;
+	D <= d_s when msxpi_read_rom = '1' else "ZZZZZZZZ";
 	
-	msxpi_select <= --'1' when (IORQ_n = '0' and Wr_n = '0' and A(7 downto 0) = x"56") else  
-						 '1' when (MREQ_n = '0' and WR_n = '0' and A = x"10EA") else
-						 --'1' when (MREQ_n = '0' and WR_n = '0' and A = x"D000") else
+	msxpi_read_rom <= '1' when (sltsl = '0' and A <= x"3FFF") else '0';
+	msxpi_write_mem <= '1' when (MREQ_n = '0' and WR_n = '0') else '0';
+	msxpi_write_io <= '1' when (IORQ_n = '0' and WR_n ='0') else '0';
+	
+	msxpi_select <= '1' when ((msxpi_write_mem = '1' and (A = x"2FA0" OR A = x"3CDA" or A = x"100A")) or 
+	                          (msxpi_write_io = '1' and (A(7 downto 0) = x"56"))) else
 						 '0';
-	
-	process(msxpi_select,rpi_rdy,rpi_on_s)
+						 
+	process(msxpi_select,rpi_rdy)
 	begin
-		if (rpi_on_s = '0' or rpi_rdy = '1') then
+		if (rpi_rdy = '1') then
 			wait_n_s <= 'Z';
 			cs_s <= '0';
+			d_s <= rpi_d;
 		elsif (msxpi_select'event and msxpi_select = '1') then
 			wait_n_s <= '0';
 			cs_s <= '1';
