@@ -35,7 +35,7 @@ d7 = 7
 a0 = 8
 a1 = 9
 a2 = 10
-a3 = 12
+a3 = 11
 a4 = 12
 a5 = 13
 a6 = 14
@@ -51,7 +51,7 @@ cs = 21
 wr = 23
 io = 24
 rdy = 25
-res1 = 30 # GPIO0 / ID_SD : These two pins are reserved, but may be posible
+rpi_on = 30 # GPIO0 / ID_SD : These two pins are reserved, but may be posible
 res2 = 31 # GPIO1 / ID?SC : to use them for output only - to be tested.
 
 def init_gpio():
@@ -61,8 +61,8 @@ def init_gpio():
     GPIO.setup(rdy, GPIO.OUT)
     GPIO.setup(wr, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(io, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.setup(res1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.setup(res2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(rpi_on, GPIO.OUT)
+    GPIO.setup(res2, GPIO.OUT)
     GPIO.setup(d0, GPIO.IN)
     GPIO.setup(d1, GPIO.IN)
     GPIO.setup(d2, GPIO.IN)
@@ -96,13 +96,11 @@ def spi_transfer(byte_out=0):
 
     # read A bus
     for bit in [a13,a12,a11,a10,a9,a8,a7,a6,a5,a4,a3,a2,a1,a0]:
-        print bit
         addr = addr << 1
         addr = addr | GPIO.input(bit)
 
     # read D bus
     for bit in [d7,d6,d5,d4,d3,d2,d1,d0]:
-
         data = data << 1
         data = data | GPIO.input(bit)
 
@@ -114,9 +112,7 @@ def spi_transfer(byte_out=0):
     print("Address:",hex(addr))
     print("data:",hex(data))
     print("wr_n:",hex(wr_n))
-    print("rd_n:",hex(rd_n))
     print("mreq_n:",hex(mreq_n))
-    print("iorq_n:",hex(iorq_n))
 
     return addr,data,wr_n,rd_n,iorq_n,mreq_n
 
@@ -127,23 +123,30 @@ def spi_transfer(byte_out=0):
 """
 
 def callback_gpio(channel):
-    GPIO.output(rdy, GPIO.LOW)
     print("*")
     global interrupt, msx_address,bytein, byteout
     # "r" receive data from MSX
-    msx_busddata = spi_transfer()
-
-    print(hex(msx_busddata))
+    spi_transfer()
 
     print("-")
+    GPIO.output(rdy, GPIO.LOW)
     GPIO.output(rdy, GPIO.HIGH)
+    GPIO.output(rdy, GPIO.LOW)
 
 init_gpio()
-GPIO.add_event_detect(cs, GPIO.RISING, callback=callback_gpio)
+GPIO.output(rdy, GPIO.LOW)
 GPIO.output(rdy, GPIO.HIGH)
+GPIO.output(rdy, GPIO.LOW)
+
+print("rdy:",GPIO.input(rdy))
+print("rpi_on",GPIO.input(rdy))
+GPIO.add_event_detect(cs, GPIO.RISING, callback=callback_gpio)
+GPIO.output(rpi_on, GPIO.LOW)
 print "GPIO Initialized\n"
 print "Starting MSXPi2 Server Version ",version,"Build",build
 
+print("rdy:",GPIO.input(rdy))
+print("rpi_on",GPIO.input(rdy))
 print "st_recvcmd: waiting command"
 try:
     while 1:
@@ -151,5 +154,6 @@ try:
 
 except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
    print("Keyboard interrupt")
+   GPIO.output(rpi_on, GPIO.HIGH)
    GPIO.cleanup() 
 
