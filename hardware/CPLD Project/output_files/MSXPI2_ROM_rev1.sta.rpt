@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MSXPI2_ROM_rev1
-Sun Jul 05 07:43:42 2020
+Mon Jul 06 03:23:45 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -153,8 +153,8 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[0]|[16]   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[1]|[16]   ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[1]|[16]   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[2]|[22]   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[2]|[22]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[2]|[21]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[2]|[21]   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[3]|[20]   ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SLTSL ; Rise       ; d_s[3]|[20]   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SLTSL ; Rise       ; d_s[4]|[19]   ;
@@ -179,7 +179,7 @@ No paths to report.
 ;  A[2]     ; SLTSL      ; 13.000 ; 13.000 ; Fall       ; SLTSL           ;
 ;  A[3]     ; SLTSL      ; 13.000 ; 13.000 ; Fall       ; SLTSL           ;
 ;  A[4]     ; SLTSL      ; 13.000 ; 13.000 ; Fall       ; SLTSL           ;
-;  A[5]     ; SLTSL      ; 12.000 ; 12.000 ; Fall       ; SLTSL           ;
+;  A[5]     ; SLTSL      ; 13.000 ; 13.000 ; Fall       ; SLTSL           ;
 ;  A[6]     ; SLTSL      ; 6.000  ; 6.000  ; Fall       ; SLTSL           ;
 ;  A[7]     ; SLTSL      ; 6.000  ; 6.000  ; Fall       ; SLTSL           ;
 ;  A[8]     ; SLTSL      ; 6.000  ; 6.000  ; Fall       ; SLTSL           ;
@@ -280,19 +280,35 @@ No paths to report.
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
 ; A[0]       ; GPIO_A[0]   ; 15.000 ;        ;        ; 15.000 ;
+; A[0]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[1]       ; GPIO_A[1]   ; 15.000 ;        ;        ; 15.000 ;
+; A[1]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[2]       ; GPIO_A[2]   ; 15.000 ;        ;        ; 15.000 ;
+; A[2]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[3]       ; GPIO_A[3]   ; 15.000 ;        ;        ; 15.000 ;
+; A[3]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[4]       ; GPIO_A[4]   ; 15.000 ;        ;        ; 15.000 ;
+; A[4]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[5]       ; GPIO_A[5]   ; 15.000 ;        ;        ; 15.000 ;
+; A[5]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[6]       ; GPIO_A[6]   ; 15.000 ;        ;        ; 15.000 ;
+; A[6]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[7]       ; GPIO_A[7]   ; 15.000 ;        ;        ; 15.000 ;
+; A[7]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[8]       ; GPIO_A[8]   ; 15.000 ;        ;        ; 15.000 ;
+; A[8]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[9]       ; GPIO_A[9]   ; 15.000 ;        ;        ; 15.000 ;
+; A[9]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[10]      ; GPIO_A[10]  ; 15.000 ;        ;        ; 15.000 ;
+; A[10]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[11]      ; GPIO_A[11]  ; 15.000 ;        ;        ; 15.000 ;
+; A[11]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[12]      ; GPIO_A[12]  ; 15.000 ;        ;        ; 15.000 ;
+; A[12]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[13]      ; GPIO_A[13]  ; 15.000 ;        ;        ; 15.000 ;
+; A[13]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
+; A[14]      ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
+; A[15]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; MREQ_n     ; rpi_io      ; 15.000 ;        ;        ; 15.000 ;
 ; RD_n       ; D[0]        ;        ; 22.000 ; 22.000 ;        ;
 ; RD_n       ; D[1]        ;        ; 22.000 ; 22.000 ;        ;
@@ -304,7 +320,6 @@ No paths to report.
 ; RD_n       ; D[7]        ;        ; 22.000 ; 22.000 ;        ;
 ; RD_n       ; rpi_cs      ;        ; 15.000 ; 15.000 ;        ;
 ; WR_n       ; rpi_wr      ; 15.000 ;        ;        ; 15.000 ;
-; rpi_rdy    ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -314,19 +329,35 @@ No paths to report.
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
 ; A[0]       ; GPIO_A[0]   ; 15.000 ;        ;        ; 15.000 ;
+; A[0]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[1]       ; GPIO_A[1]   ; 15.000 ;        ;        ; 15.000 ;
+; A[1]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[2]       ; GPIO_A[2]   ; 15.000 ;        ;        ; 15.000 ;
+; A[2]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[3]       ; GPIO_A[3]   ; 15.000 ;        ;        ; 15.000 ;
+; A[3]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[4]       ; GPIO_A[4]   ; 15.000 ;        ;        ; 15.000 ;
+; A[4]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[5]       ; GPIO_A[5]   ; 15.000 ;        ;        ; 15.000 ;
+; A[5]       ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 ; A[6]       ; GPIO_A[6]   ; 15.000 ;        ;        ; 15.000 ;
+; A[6]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[7]       ; GPIO_A[7]   ; 15.000 ;        ;        ; 15.000 ;
+; A[7]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[8]       ; GPIO_A[8]   ; 15.000 ;        ;        ; 15.000 ;
+; A[8]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[9]       ; GPIO_A[9]   ; 15.000 ;        ;        ; 15.000 ;
+; A[9]       ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[10]      ; GPIO_A[10]  ; 15.000 ;        ;        ; 15.000 ;
+; A[10]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[11]      ; GPIO_A[11]  ; 15.000 ;        ;        ; 15.000 ;
+; A[11]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[12]      ; GPIO_A[12]  ; 15.000 ;        ;        ; 15.000 ;
+; A[12]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; A[13]      ; GPIO_A[13]  ; 15.000 ;        ;        ; 15.000 ;
+; A[13]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
+; A[14]      ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
+; A[15]      ; WAIT_n      ;        ; 15.000 ; 15.000 ;        ;
 ; MREQ_n     ; rpi_io      ; 15.000 ;        ;        ; 15.000 ;
 ; RD_n       ; D[0]        ;        ; 22.000 ; 22.000 ;        ;
 ; RD_n       ; D[1]        ;        ; 22.000 ; 22.000 ;        ;
@@ -338,7 +369,6 @@ No paths to report.
 ; RD_n       ; D[7]        ;        ; 22.000 ; 22.000 ;        ;
 ; RD_n       ; rpi_cs      ;        ; 15.000 ; 15.000 ;        ;
 ; WR_n       ; rpi_wr      ; 15.000 ;        ;        ; 15.000 ;
-; rpi_rdy    ; WAIT_n      ; 15.000 ;        ;        ; 15.000 ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -471,10 +501,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 21    ; 21   ;
-; Unconstrained Input Port Paths  ; 163   ; 163  ;
+; Unconstrained Input Ports       ; 20    ; 20   ;
+; Unconstrained Input Port Paths  ; 178   ; 178  ;
 ; Unconstrained Output Ports      ; 34    ; 34   ;
-; Unconstrained Output Port Paths ; 51    ; 51   ;
+; Unconstrained Output Port Paths ; 66    ; 66   ;
 +---------------------------------+-------+------+
 
 
@@ -484,7 +514,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jul 05 07:43:38 2020
+    Info: Processing started: Mon Jul 06 03:23:40 2020
 Info: Command: quartus_sta MSXPi2_ROM -c MSXPI2_ROM_rev1
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -511,8 +541,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 355 megabytes
-    Info: Processing ended: Sun Jul 05 07:43:42 2020
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Mon Jul 06 03:23:45 2020
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:02
 
 

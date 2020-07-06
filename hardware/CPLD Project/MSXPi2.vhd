@@ -28,8 +28,8 @@ entity MSXPi2 is
 		--TMS : in std_logic;
 
 		-- MSX Bus signals
-		D : inout std_logic_vector(7 downto 0);
 		A : in std_logic_vector(15 downto 0);
+		D : inout std_logic_vector(7 downto 0);
 		RD_n : in std_logic;
 		WR_n : in std_logic;
 		MREQ_n : in std_logic;
@@ -40,8 +40,8 @@ entity MSXPi2 is
 		WAIT_n : out std_logic;
 		
 		-- Raspberry Pi GPIO
-		GPIO_D : inout std_logic_vector(7 downto 0);
-		GPIO_A : out std_logic_vector(13 downto 0);
+		rpi_d : inout std_logic_vector(7 downto 0);
+		rpi_a : out std_logic_vector(13 downto 0);
 		--GPIO_D[0] : inout std_logic; -- D0 / GPIO_26 / BCM26
 		--GPIO_D[1] : inout std_logic; -- D1 / GPIO_27 / BCM27
 		--GPIO_D[2] : inout std_logic; -- D2 / GPIO_2 / BCM2
@@ -68,8 +68,8 @@ entity MSXPi2 is
 		rpi_cs : out std_logic; -- RPI CS signal - send interrupt to RPi - GPIO_21 / BCM21
 		rpi_wr : out std_logic; -- MSX access type: 1 = read, 0 = write - GPIO_23 / BCM23
 		rpi_io : out std_logic; -- MSX IO type: 1 = port access, 0 = memory access - GPIO_24 / BCM24
-		rpi_rdy : in std_logic; -- RPI_ready - GPIO_25 / BCM25
-		rpi_off : in std_logic; -- BCM0
+		rpi_rdy: in std_logic; -- RPI_ready - GPIO_25 / BCM25
+		rpi_on : in std_logic; -- BCM0
 		GPIO_1 : in std_logic  -- BCM1
 		
 	);
@@ -78,26 +78,57 @@ end MSXPi2;
 
 architecture ppl_type of MSXPi2 is
 
-   signal led_s: std_logic;
-   signal access_s: std_logic;
-   signal msxpi_en_s: std_logic;
+	signal msxpi_select: std_logic := '0';
+   signal wait_n_s: std_logic := 'Z';
+	signal a_s : std_logic_vector(15 downto 0);
    signal d_s: std_logic_vector(7 downto 0);
+	signal cs_s: std_logic := '0';
+	signal wr_s: std_logic;
+	signal io_s: std_logic;
+	signal rpi_on_s: std_logic;
+	signal rpi_rdy_s: std_logic;
 	
 begin
-   	
-	BDIR <= 'Z';	
-	WAIT_n <= rpi_rdy when rpi_off = '0' else
-             '0' when MREQ_n = '0' and Wr_n = '0' and A = x"8000"  else
-				 'Z';
-	
-   rpi_cs <= '1' when MREQ_n = '0' and Wr_n = '0' and A = x"8000" else '0';
-		
-	rpi_wr <= WR_n;			-- 1 = read, 0 = write
-   rpi_io <= MREQ_n;		-- 1 = port access, 0 = memory access
-	
-	GPIO_D <= D;
-	GPIO_A <= A(13 downto 0);
 
+	rpi_on_s <= not rpi_on;
+	BDIR <= 'Z';   		
+	
+	WAIT_n <= wait_n_s;
+	
+	msxpi_select <= '1' when IORQ_n = '0' and Wr_n = '0' and A(7 downto 0) = x"56" else '0';
+	
+	process(msxpi_select,rpi_rdy,rpi_on_s)
+	begin
+		if (rpi_on_s = '0' or rpi_rdy = '1' or msxpi_seclect = '0') then
+			wait_n_s <= 'Z';
+			cs_s <= '0';
+		elsif (msxpi_select'event and msxpi_select = '1') then
+			wait_n_s <= '0';
+			cs_s <= '1';
+			a_s <= a;
+			d_s <= d;
+			wr_s <= WR_n;
+			io_s <= MREQ_n;
+		end if;
+	end process;
+	
+	--process(cs_s)
+	--begin
+	--	if (cs_s'event and cs_s = '1') then
+	--		rpi_cs <= cs_s;
+	--		rpi_a <= a_s(13 downto 0);
+	--		rpi_d <= d_s;
+	--		rpi_wr <= wr_s;
+	--		rpi_io <= io_s;
+	--	end if;
+	--end process;
+	
+			rpi_cs <= cs_s;
+			rpi_a <= a_s(13 downto 0);
+			rpi_d <= d_s;
+			rpi_wr <= wr_s;
+			rpi_io <= io_s;
+			
 end;
 
 

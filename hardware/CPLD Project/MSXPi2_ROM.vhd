@@ -77,7 +77,7 @@ architecture ppl_type of MSXPi2_ROM is
 begin
 
    rpi_cs <= '1' when SLTSL = '0' and RD_n = '0' else '0';
-   WAIT_n <= rpi_rdy;
+   WAIT_n <= '0' when A = x"4027" else 'Z';
 				 
    BDIR <= 'Z';
 

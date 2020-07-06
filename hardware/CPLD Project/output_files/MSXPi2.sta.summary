@@ -2,4 +2,124 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Setup 'A[0]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[1]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[2]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[3]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[4]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[5]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[6]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'A[7]'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'IORQ_n'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Setup 'WR_n'
+Slack : -12.000
+TNS   : -288.000
+
+Type  : Hold 'A[0]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[1]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[2]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[3]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[4]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[5]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[6]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'A[7]'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'IORQ_n'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Hold 'WR_n'
+Slack : -4.000
+TNS   : -36.000
+
+Type  : Minimum Pulse Width 'A[0]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[1]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[2]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[3]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[4]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[5]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[6]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'A[7]'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'IORQ_n'
+Slack : -5.500
+TNS   : -286.000
+
+Type  : Minimum Pulse Width 'WR_n'
+Slack : -5.500
+TNS   : -286.000
+
 ------------------------------------------------------------

@@ -1,5 +1,5 @@
 Flow report for MSXPI2_ROM_rev1
-Sun Jul 05 07:43:42 2020
+Mon Jul 06 03:23:44 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Sun Jul 05 07:43:35 2020           ;
+; Flow Status               ; Successful - Mon Jul 06 03:23:37 2020           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; MSXPI2_ROM_rev1                                 ;
 ; Top-level Entity Name     ; MSXPi2_ROM                                      ;
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/05/2020 07:43:15 ;
+; Start date & time ; 07/06/2020 03:23:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MSXPI2_ROM_rev1     ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------+-------------------------------+-----------------+-------------+------------+
 ; Assignment Name          ; Value                         ; Default Value   ; Entity Name ; Section Id ;
 +--------------------------+-------------------------------+-----------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 8796761971725.159396019400936 ; --              ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 8796761971725.159403099502116 ; --              ; --          ; --         ;
 ; FITTER_EFFORT            ; Standard Fit                  ; Auto Fit        ; --          ; --         ;
 ; OPTIMIZE_HOLD_TIMING     ; Off                           ; --              ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; output_files                  ; --              ; --          ; --         ;
@@ -81,11 +81,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 452 MB              ; 00:00:05                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 459 MB              ; 00:00:05                           ;
 ; Fitter                    ; 00:00:04     ; 1.0                     ; 459 MB              ; 00:00:03                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 364 MB              ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 355 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:12                           ;
+; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:12                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
