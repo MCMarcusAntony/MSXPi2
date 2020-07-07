@@ -2,16 +2,40 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Setup 'A[0]'
+Type  : Setup 'RD_n'
+Slack : -20.500
+TNS   : -328.000
+
+Type  : Setup 'SLTSL'
+Slack : -20.500
+TNS   : -328.000
+
+Type  : Setup 'A[14]'
 Slack : -12.500
-TNS   : -300.000
+TNS   : -200.000
 
-Type  : Hold 'A[0]'
-Slack : -13.000
-TNS   : -13.000
+Type  : Hold 'A[14]'
+Slack : -3.000
+TNS   : -48.000
 
-Type  : Minimum Pulse Width 'A[0]'
+Type  : Hold 'RD_n'
+Slack : 5.000
+TNS   : 0.000
+
+Type  : Hold 'SLTSL'
+Slack : 5.000
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'A[14]'
 Slack : -5.500
-TNS   : -572.000
+TNS   : -418.000
+
+Type  : Minimum Pulse Width 'RD_n'
+Slack : -5.500
+TNS   : -209.000
+
+Type  : Minimum Pulse Width 'SLTSL'
+Slack : -5.500
+TNS   : -209.000
 
 ------------------------------------------------------------

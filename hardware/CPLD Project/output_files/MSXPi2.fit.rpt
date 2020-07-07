@@ -1,5 +1,5 @@
 Fitter report for MSXPi2
-Tue Jul 07 07:22:13 2020
+Tue Jul 07 10:40:17 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -23,9 +23,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  15. Other Routing Usage Summary
  16. LAB External Interconnect
  17. LAB Macrocells
- 18. Logic Cell Interconnection
- 19. Fitter Device Options
- 20. Fitter Messages
+ 18. Shareable Expander
+ 19. Logic Cell Interconnection
+ 20. Fitter Device Options
+ 21. Fitter Messages
 
 
 
@@ -51,14 +52,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Fitter Summary                                                              ;
 +---------------------------+-------------------------------------------------+
-; Fitter Status             ; Successful - Tue Jul 07 07:22:13 2020           ;
+; Fitter Status             ; Successful - Tue Jul 07 10:40:17 2020           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; MSXPi2                                          ;
 ; Top-level Entity Name     ; MSXPi2                                          ;
 ; Family                    ; MAX7000S                                        ;
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 38 / 128 ( 30 % )                               ;
+; Total macrocells          ; 37 / 128 ( 29 % )                               ;
 ; Total pins                ; 64 / 68 ( 94 % )                                ;
 +---------------------------+-------------------------------------------------+
 
@@ -105,21 +106,21 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 +------------------------------+-------------------+
 ; Resource                     ; Usage             ;
 +------------------------------+-------------------+
-; Logic cells                  ; 38 / 128 ( 30 % ) ;
-; Registers                    ; 26 / 128 ( 20 % ) ;
-; Number of pterms used        ; 107               ;
+; Logic cells                  ; 37 / 128 ( 29 % ) ;
+; Registers                    ; 19 / 128 ( 15 % ) ;
+; Number of pterms used        ; 99                ;
 ; I/O pins                     ; 64 / 68 ( 94 % )  ;
 ;     -- Clock pins            ; 0 / 2 ( 0 % )     ;
 ;     -- Dedicated input pins  ; 0 / 2 ( 0 % )     ;
 ;                              ;                   ;
 ; Global signals               ; 0                 ;
-; Shareable expanders          ; 0 / 128 ( 0 % )   ;
+; Shareable expanders          ; 18 / 128 ( 14 % ) ;
 ; Parallel expanders           ; 0 / 120 ( 0 % )   ;
-; Cells using turbo bit        ; 38 / 128 ( 30 % ) ;
-; Maximum fan-out              ; 34                ;
-; Highest non-global fan-out   ; 34                ;
-; Total fan-out                ; 191               ;
-; Average fan-out              ; 1.87              ;
+; Cells using turbo bit        ; 37 / 128 ( 29 % ) ;
+; Maximum fan-out              ; 31                ;
+; Highest non-global fan-out   ; 31                ;
+; Total fan-out                ; 312               ;
+; Average fan-out              ; 2.62              ;
 +------------------------------+-------------------+
 
 
@@ -128,31 +129,31 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 +---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
 ; Name    ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
 +---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
-; A[0]    ; 40    ; --       ; 4   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[10]   ; 46    ; --       ; 5   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[11]   ; 27    ; --       ; 3   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[12]   ; 24    ; --       ; 3   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[13]   ; 41    ; --       ; 4   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[14]   ; 22    ; --       ; 2   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[15]   ; 48    ; --       ; 5   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[1]    ; 21    ; --       ; 2   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[2]    ; 39    ; --       ; 4   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[3]    ; 20    ; --       ; 2   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[4]    ; 37    ; --       ; 4   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[5]    ; 18    ; --       ; 2   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[6]    ; 45    ; --       ; 5   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[7]    ; 25    ; --       ; 3   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[8]    ; 44    ; --       ; 5   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; A[9]    ; 28    ; --       ; 3   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[0]    ; 40    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[10]   ; 46    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[11]   ; 27    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[12]   ; 24    ; --       ; 3   ; 6                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[13]   ; 41    ; --       ; 4   ; 6                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[14]   ; 22    ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[15]   ; 48    ; --       ; 5   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[1]    ; 21    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[2]    ; 39    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[3]    ; 20    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[4]    ; 37    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[5]    ; 18    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[6]    ; 45    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[7]    ; 25    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[8]    ; 44    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[9]    ; 28    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; GPIO_1  ; 56    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; IORQ_n  ; 30    ; --       ; 3   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IORQ_n  ; 30    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
 ; M1      ; 31    ; --       ; 3   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; MREQ_n  ; 50    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; RD_n    ; 49    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; SLTSL   ; 52    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; WR_n    ; 29    ; --       ; 3   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
-; rpi_on  ; 55    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
-; rpi_rdy ; 74    ; --       ; 8   ; 34                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; MREQ_n  ; 50    ; --       ; 5   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; RD_n    ; 49    ; --       ; 5   ; 20                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SLTSL   ; 52    ; --       ; 5   ; 20                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; WR_n    ; 29    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; rpi_on  ; 55    ; --       ; 6   ; 30                    ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; rpi_rdy ; 74    ; --       ; 8   ; 31                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
 +---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
 
 
@@ -162,7 +163,7 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 ; Name      ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
 +-----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
 ; BDIR      ; 51    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; WAIT_n    ; 54    ; --       ; 6   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; WAIT_n    ; 54    ; --       ; 6   ; no              ; no             ; no         ; yes           ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
 ; rpi_a[0]  ; 76    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
 ; rpi_a[10] ; 64    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
 ; rpi_a[11] ; 8     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
@@ -188,22 +189,22 @@ The pin-out file can be found in F:/github/MSXPi2/hardware/CPLD Project/output_f
 +----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
 ; Name     ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Slow Slew Rate ; Open Drain ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
 +----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
-; D[0]     ; 36    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[1]     ; 17    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[2]     ; 35    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[3]     ; 16    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[4]     ; 34    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[5]     ; 15    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[6]     ; 33    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; D[7]     ; 12    ; --       ; 1   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; msxpi_read_rom~0     ; -                   ;
-; rpi_d[0] ; 10    ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[1] ; 67    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[2] ; 57    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[3] ; 58    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[4] ; 61    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[5] ; 80    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[6] ; 81    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
-; rpi_d[7] ; 79    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; D[0]     ; 36    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[1]     ; 17    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[2]     ; 35    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[3]     ; 16    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[4]     ; 34    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[5]     ; 15    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[6]     ; 33    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; D[7]     ; 12    ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; D~20                 ; -                   ;
+; rpi_d[0] ; 10    ; --       ; 1   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~0 (inverted)    ; -                   ;
+; rpi_d[1] ; 67    ; --       ; 7   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~1 (inverted)    ; -                   ;
+; rpi_d[2] ; 57    ; --       ; 6   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~2 (inverted)    ; -                   ;
+; rpi_d[3] ; 58    ; --       ; 6   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~3 (inverted)    ; -                   ;
+; rpi_d[4] ; 61    ; --       ; 6   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~4 (inverted)    ; -                   ;
+; rpi_d[5] ; 80    ; --       ; 8   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~5 (inverted)    ; -                   ;
+; rpi_d[6] ; 81    ; --       ; 8   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~6 (inverted)    ; -                   ;
+; rpi_d[7] ; 79    ; --       ; 8   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~7 (inverted)    ; -                   ;
 +----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
 
 
@@ -317,94 +318,125 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+------------+------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+------------+------+---------------------+--------------+
-; |MSXPi2                    ; 38         ; 64   ; |MSXPi2             ; work         ;
+; |MSXPi2                    ; 37         ; 64   ; |MSXPi2             ; work         ;
 +----------------------------+------------+------+---------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                               ;
-+------------------------+----------+---------+--------------+--------+----------------------+------------------+
-; Name                   ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
-+------------------------+----------+---------+--------------+--------+----------------------+------------------+
-; msxpi_select~36sexpbal ; LC33     ; 26      ; Clock        ; no     ; --                   ; --               ;
-; rpi_rdy                ; PIN_74   ; 34      ; Async. clear ; no     ; --                   ; --               ;
-+------------------------+----------+---------+--------------+--------+----------------------+------------------+
++--------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                        ;
++-----------------+----------+---------+--------------+--------+----------------------+------------------+
+; Name            ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++-----------------+----------+---------+--------------+--------+----------------------+------------------+
+; RD_n            ; PIN_49   ; 20      ; Clock        ; no     ; --                   ; --               ;
+; SLTSL           ; PIN_52   ; 20      ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~21 ; SEXP88   ; 3       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~22 ; SEXP85   ; 3       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~23 ; SEXP83   ; 3       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~78 ; SEXP5    ; 6       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~79 ; SEXP6    ; 6       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~80 ; SEXP8    ; 6       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~81 ; SEXP97   ; 6       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~82 ; SEXP99   ; 6       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~83 ; SEXP101  ; 6       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~84 ; SEXP115  ; 4       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~85 ; SEXP118  ; 4       ; Clock        ; no     ; --                   ; --               ;
+; msxpi_select~86 ; SEXP120  ; 4       ; Clock        ; no     ; --                   ; --               ;
+; process_0~1sexp ; SEXP3    ; 7       ; Async. clear ; no     ; --                   ; --               ;
+; process_0~4     ; SEXP91   ; 2       ; Async. clear ; no     ; --                   ; --               ;
++-----------------+----------+---------+--------------+--------+----------------------+------------------+
 
 
-+----------------------------------+
-; Non-Global High Fan-Out Signals  ;
-+------------------------+---------+
-; Name                   ; Fan-Out ;
-+------------------------+---------+
-; rpi_rdy                ; 34      ;
-; msxpi_select~36sexpbal ; 26      ;
-; msxpi_read_rom~0       ; 8       ;
-; d_s[0]                 ; 3       ;
-; d_s[1]                 ; 3       ;
-; d_s[2]                 ; 3       ;
-; d_s[3]                 ; 3       ;
-; d_s[4]                 ; 3       ;
-; d_s[5]                 ; 3       ;
-; d_s[6]                 ; 3       ;
-; d_s[7]                 ; 3       ;
-; IORQ_n                 ; 2       ;
-; WR_n                   ; 2       ;
-; A[15]                  ; 2       ;
-; A[14]                  ; 2       ;
-; A[13]                  ; 2       ;
-; A[12]                  ; 2       ;
-; A[11]                  ; 2       ;
-; A[10]                  ; 2       ;
-; A[9]                   ; 2       ;
-; A[8]                   ; 2       ;
-; A[7]                   ; 2       ;
-; A[6]                   ; 2       ;
-; A[5]                   ; 2       ;
-; A[4]                   ; 2       ;
-; A[3]                   ; 2       ;
-; A[2]                   ; 2       ;
-; A[1]                   ; 2       ;
-; A[0]                   ; 2       ;
-; rpi_d_s[7]~62          ; 2       ;
-; rpi_d_s[6]~58          ; 2       ;
-; rpi_d_s[5]~54          ; 2       ;
-; rpi_d_s[4]~50          ; 2       ;
-; rpi_d_s[3]~46          ; 2       ;
-; rpi_d_s[2]~42          ; 2       ;
-; rpi_d_s[1]~38          ; 2       ;
-; rpi_d_s[0]~34          ; 2       ;
-; wr_s                   ; 2       ;
-; a_s[0]                 ; 2       ;
-; a_s[1]                 ; 2       ;
-; a_s[2]                 ; 2       ;
-; a_s[3]                 ; 2       ;
-; a_s[4]                 ; 2       ;
-; a_s[5]                 ; 2       ;
-; a_s[6]                 ; 2       ;
-; a_s[7]                 ; 2       ;
-; a_s[8]                 ; 2       ;
-; a_s[9]                 ; 2       ;
-; a_s[10]                ; 2       ;
-; a_s[11]                ; 2       ;
-; a_s[12]                ; 2       ;
-; a_s[13]                ; 2       ;
-; io_s                   ; 2       ;
-; D[7]~7                 ; 1       ;
-; D[6]~6                 ; 1       ;
-; D[5]~5                 ; 1       ;
-; D[4]~4                 ; 1       ;
-; D[3]~3                 ; 1       ;
-; D[2]~2                 ; 1       ;
-; D[1]~1                 ; 1       ;
-; D[0]~0                 ; 1       ;
-; SLTSL                  ; 1       ;
-; MREQ_n                 ; 1       ;
-; RD_n                   ; 1       ;
-; ~VCC~0                 ; 1       ;
-; wait_n_s~6             ; 1       ;
-; wait_n_s~en            ; 1       ;
-; cs_s                   ; 1       ;
-+------------------------+---------+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++-----------------+---------------+
+; Name            ; Fan-Out       ;
++-----------------+---------------+
+; rpi_rdy         ; 31            ;
+; rpi_on          ; 30            ;
+; SLTSL           ; 20            ;
+; RD_n            ; 20            ;
+; A[15]           ; 13            ;
+; A[14]           ; 13            ;
+; D~20            ; 8             ;
+; process_0~1sexp ; 7             ;
+; process_0~5     ; 6             ;
+; msxpi_select~83 ; 6             ;
+; msxpi_select~82 ; 6             ;
+; msxpi_select~81 ; 6             ;
+; msxpi_select~80 ; 6             ;
+; msxpi_select~79 ; 6             ;
+; msxpi_select~78 ; 6             ;
+; A[13]           ; 6             ;
+; A[12]           ; 6             ;
+; process_0~7     ; 4             ;
+; process_0~6     ; 4             ;
+; msxpi_select~86 ; 4             ;
+; msxpi_select~85 ; 4             ;
+; msxpi_select~84 ; 4             ;
+; process_0~8     ; 3             ;
+; msxpi_select~23 ; 3             ;
+; msxpi_select~22 ; 3             ;
+; msxpi_select~21 ; 3             ;
+; process_0~4     ; 2             ;
+; rpi_d_s[7]~62   ; 2             ;
+; rpi_d_s[6]~58   ; 2             ;
+; rpi_d_s[5]~54   ; 2             ;
+; rpi_d_s[4]~50   ; 2             ;
+; rpi_d_s[3]~46   ; 2             ;
+; rpi_d_s[2]~42   ; 2             ;
+; rpi_d_s[1]~38   ; 2             ;
+; rpi_d_s[0]~34   ; 2             ;
+; wr_s            ; 2             ;
+; a_s[0]          ; 2             ;
+; io_s            ; 2             ;
+; a_s[1]          ; 2             ;
+; a_s[2]          ; 2             ;
+; a_s[3]          ; 2             ;
+; a_s[4]          ; 2             ;
+; a_s[5]          ; 2             ;
+; a_s[6]          ; 2             ;
+; a_s[7]          ; 2             ;
+; a_s[8]          ; 2             ;
+; a_s[9]          ; 2             ;
+; a_s[10]         ; 2             ;
+; a_s[11]         ; 2             ;
+; a_s[12]         ; 2             ;
+; a_s[13]         ; 2             ;
+; rpi_d[7]~7      ; 1             ;
+; rpi_d[6]~6      ; 1             ;
+; rpi_d[5]~5      ; 1             ;
+; rpi_d[4]~4      ; 1             ;
+; rpi_d[3]~3      ; 1             ;
+; rpi_d[2]~2      ; 1             ;
+; rpi_d[1]~1      ; 1             ;
+; rpi_d[0]~0      ; 1             ;
+; IORQ_n          ; 1             ;
+; WR_n            ; 1             ;
+; A[11]           ; 1             ;
+; A[10]           ; 1             ;
+; A[9]            ; 1             ;
+; A[8]            ; 1             ;
+; A[7]            ; 1             ;
+; A[6]            ; 1             ;
+; A[5]            ; 1             ;
+; A[4]            ; 1             ;
+; A[3]            ; 1             ;
+; A[2]            ; 1             ;
+; A[1]            ; 1             ;
+; A[0]            ; 1             ;
+; ~VCC~8          ; 1             ;
+; ~VCC~7          ; 1             ;
+; ~VCC~6          ; 1             ;
+; ~VCC~5          ; 1             ;
+; ~VCC~4          ; 1             ;
+; ~VCC~3          ; 1             ;
+; ~VCC~2          ; 1             ;
+; ~VCC~1          ; 1             ;
+; ~VCC~0          ; 1             ;
+; wait_n_s~en     ; 1             ;
+; cs_s            ; 1             ;
+; wait_n_s        ; 1             ;
++-----------------+---------------+
 
 
 +-------------------------------------------------+
@@ -412,93 +444,103 @@ Note: User assignments will override these defaults. The user specified values a
 +-----------------------------+-------------------+
 ; Other Routing Resource Type ; Usage             ;
 +-----------------------------+-------------------+
-; Output enables              ; 1 / 6 ( 17 % )    ;
-; PIA buffers                 ; 93 / 288 ( 32 % ) ;
-; PIAs                        ; 98 / 288 ( 34 % ) ;
+; Output enables              ; 2 / 6 ( 33 % )    ;
+; PIA buffers                 ; 73 / 288 ( 25 % ) ;
+; PIAs                        ; 82 / 288 ( 28 % ) ;
 +-----------------------------+-------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB External Interconnect                                                   ;
 +-----------------------------------------------+-----------------------------+
-; LAB External Interconnects  (Average = 12.25) ; Number of LABs  (Total = 7) ;
+; LAB External Interconnects  (Average = 10.25) ; Number of LABs  (Total = 6) ;
 +-----------------------------------------------+-----------------------------+
-; 0 - 1                                         ; 1                           ;
+; 0 - 1                                         ; 2                           ;
 ; 2 - 3                                         ; 0                           ;
 ; 4 - 5                                         ; 0                           ;
-; 6 - 7                                         ; 1                           ;
+; 6 - 7                                         ; 0                           ;
 ; 8 - 9                                         ; 1                           ;
-; 10 - 11                                       ; 1                           ;
+; 10 - 11                                       ; 2                           ;
 ; 12 - 13                                       ; 0                           ;
 ; 14 - 15                                       ; 0                           ;
-; 16 - 17                                       ; 2                           ;
-; 18 - 19                                       ; 1                           ;
-; 20 - 21                                       ; 1                           ;
+; 16 - 17                                       ; 1                           ;
+; 18 - 19                                       ; 2                           ;
 +-----------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------+
 ; LAB Macrocells                                                       ;
 +----------------------------------------+-----------------------------+
-; Number of Macrocells  (Average = 4.75) ; Number of LABs  (Total = 8) ;
+; Number of Macrocells  (Average = 4.63) ; Number of LABs  (Total = 7) ;
 +----------------------------------------+-----------------------------+
-; 0                                      ; 0                           ;
-; 1                                      ; 2                           ;
+; 0                                      ; 1                           ;
+; 1                                      ; 1                           ;
 ; 2                                      ; 0                           ;
 ; 3                                      ; 1                           ;
 ; 4                                      ; 1                           ;
-; 5                                      ; 1                           ;
+; 5                                      ; 0                           ;
 ; 6                                      ; 0                           ;
-; 7                                      ; 1                           ;
+; 7                                      ; 3                           ;
 ; 8                                      ; 1                           ;
-; 9                                      ; 1                           ;
 +----------------------------------------+-----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Logic Cell Interconnection                                                                                                                                                                                                                                                                                                                                              ;
-+-----+------------+----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; LAB ; Logic Cell ; Input                                                                                                                            ; Output                                                                                                                                                                                                            ;
-+-----+------------+----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-;  A  ; LC5        ; msxpi_select~36sexpbal, rpi_rdy                                                                                                  ; rpi_cs                                                                                                                                                                                                            ;
-;  A  ; LC8        ; A[12], rpi_rdy, a_s[12], msxpi_select~36sexpbal                                                                                  ; a_s[12], rpi_a[12]                                                                                                                                                                                                ;
-;  A  ; LC11       ; A[11], rpi_rdy, a_s[11], msxpi_select~36sexpbal                                                                                  ; a_s[11], rpi_a[11]                                                                                                                                                                                                ;
-;  A  ; LC3        ; d_s[7], rpi_rdy, rpi_d_s[7]~62                                                                                                   ; rpi_d_s[7]~62, D[7]                                                                                                                                                                                               ;
-;  A  ; LC13       ; A[8], rpi_rdy, a_s[8], msxpi_select~36sexpbal                                                                                    ; a_s[8], rpi_a[8]                                                                                                                                                                                                  ;
-;  A  ; LC6        ; D[0], rpi_rdy, d_s[0], msxpi_select~36sexpbal                                                                                    ; d_s[0], rpi_d[0], rpi_d_s[0]~34                                                                                                                                                                                   ;
-;  A  ; LC14       ; A[5], rpi_rdy, a_s[5], msxpi_select~36sexpbal                                                                                    ; a_s[5], rpi_a[5]                                                                                                                                                                                                  ;
-;  A  ; LC16       ; A[4], rpi_rdy, a_s[4], msxpi_select~36sexpbal                                                                                    ; a_s[4], rpi_a[4]                                                                                                                                                                                                  ;
-;  B  ; LC29       ; d_s[5], rpi_rdy, rpi_d_s[5]~54                                                                                                   ; rpi_d_s[5]~54, D[5]                                                                                                                                                                                               ;
-;  B  ; LC27       ; d_s[3], rpi_rdy, rpi_d_s[3]~46                                                                                                   ; rpi_d_s[3]~46, D[3]                                                                                                                                                                                               ;
-;  B  ; LC25       ; d_s[1], rpi_rdy, rpi_d_s[1]~38                                                                                                   ; rpi_d_s[1]~38, D[1]                                                                                                                                                                                               ;
-;  C  ; LC33       ; WR_n, IORQ_n, A[0], A[3], A[5], A[7], A[1], A[2], A[4], A[6], RD_n, A[14], A[15], MREQ_n, A[8], A[9], A[10], A[11], A[13], A[12] ; io_s, a_s[13], a_s[12], a_s[11], a_s[10], a_s[9], a_s[8], a_s[7], a_s[6], a_s[5], a_s[4], a_s[3], a_s[2], a_s[1], a_s[0], d_s[7], d_s[6], d_s[5], d_s[4], d_s[3], d_s[2], d_s[1], d_s[0], wr_s, cs_s, wait_n_s~en ;
-;  D  ; LC64       ; d_s[6], rpi_rdy, rpi_d_s[6]~58                                                                                                   ; rpi_d_s[6]~58, D[6]                                                                                                                                                                                               ;
-;  D  ; LC61       ; d_s[4], rpi_rdy, rpi_d_s[4]~50                                                                                                   ; rpi_d_s[4]~50, D[4]                                                                                                                                                                                               ;
-;  D  ; LC59       ; d_s[2], rpi_rdy, rpi_d_s[2]~42                                                                                                   ; rpi_d_s[2]~42, D[2]                                                                                                                                                                                               ;
-;  D  ; LC57       ; d_s[0], rpi_rdy, rpi_d_s[0]~34                                                                                                   ; rpi_d_s[0]~34, D[0]                                                                                                                                                                                               ;
-;  E  ; LC77       ;                                                                                                                                  ; BDIR                                                                                                                                                                                                              ;
-;  F  ; LC83       ; wait_n_s~en                                                                                                                      ; WAIT_n                                                                                                                                                                                                            ;
-;  F  ; LC93       ; A[6], rpi_rdy, a_s[6], msxpi_select~36sexpbal                                                                                    ; a_s[6], rpi_a[6]                                                                                                                                                                                                  ;
-;  F  ; LC94       ; D[4], rpi_rdy, d_s[4], msxpi_select~36sexpbal                                                                                    ; d_s[4], rpi_d[4], rpi_d_s[4]~50                                                                                                                                                                                   ;
-;  F  ; LC91       ; D[3], rpi_rdy, d_s[3], msxpi_select~36sexpbal                                                                                    ; d_s[3], rpi_d[3], rpi_d_s[3]~46                                                                                                                                                                                   ;
-;  F  ; LC88       ; D[2], rpi_rdy, d_s[2], msxpi_select~36sexpbal                                                                                    ; d_s[2], rpi_d[2], rpi_d_s[2]~42                                                                                                                                                                                   ;
-;  G  ; LC109      ; IORQ_n, rpi_rdy, io_s, msxpi_select~36sexpbal                                                                                    ; io_s, rpi_io                                                                                                                                                                                                      ;
-;  G  ; LC105      ; WR_n, rpi_rdy, wr_s, msxpi_select~36sexpbal                                                                                      ; wr_s, rpi_wr                                                                                                                                                                                                      ;
-;  G  ; LC98       ; msxpi_select~36sexpbal, rpi_rdy                                                                                                  ; wait_n_s~6                                                                                                                                                                                                        ;
-;  G  ; LC104      ; D[1], rpi_rdy, d_s[1], msxpi_select~36sexpbal                                                                                    ; d_s[1], rpi_d[1], rpi_d_s[1]~38                                                                                                                                                                                   ;
-;  G  ; LC97       ; A[7], rpi_rdy, a_s[7], msxpi_select~36sexpbal                                                                                    ; a_s[7], rpi_a[7]                                                                                                                                                                                                  ;
-;  G  ; LC101      ; A[9], rpi_rdy, a_s[9], msxpi_select~36sexpbal                                                                                    ; a_s[9], rpi_a[9]                                                                                                                                                                                                  ;
-;  G  ; LC99       ; A[10], rpi_rdy, a_s[10], msxpi_select~36sexpbal                                                                                  ; a_s[10], rpi_a[10]                                                                                                                                                                                                ;
-;  G  ; LC107      ; A[13], rpi_rdy, a_s[13], msxpi_select~36sexpbal                                                                                  ; a_s[13], rpi_a[13]                                                                                                                                                                                                ;
-;  G  ; LC112      ; A[14], A[15], SLTSL                                                                                                              ; D[0], D[1], D[2], D[3], D[4], D[5], D[6], D[7]                                                                                                                                                                    ;
-;  H  ; LC126      ; D[5], rpi_rdy, d_s[5], msxpi_select~36sexpbal                                                                                    ; d_s[5], rpi_d[5], rpi_d_s[5]~54                                                                                                                                                                                   ;
-;  H  ; LC128      ; D[6], rpi_rdy, d_s[6], msxpi_select~36sexpbal                                                                                    ; d_s[6], rpi_d[6], rpi_d_s[6]~58                                                                                                                                                                                   ;
-;  H  ; LC125      ; D[7], rpi_rdy, d_s[7], msxpi_select~36sexpbal                                                                                    ; d_s[7], rpi_d[7], rpi_d_s[7]~62                                                                                                                                                                                   ;
-;  H  ; LC120      ; A[0], rpi_rdy, a_s[0], msxpi_select~36sexpbal                                                                                    ; a_s[0], rpi_a[0]                                                                                                                                                                                                  ;
-;  H  ; LC118      ; A[1], rpi_rdy, a_s[1], msxpi_select~36sexpbal                                                                                    ; a_s[1], rpi_a[1]                                                                                                                                                                                                  ;
-;  H  ; LC115      ; A[2], rpi_rdy, a_s[2], msxpi_select~36sexpbal                                                                                    ; a_s[2], rpi_a[2]                                                                                                                                                                                                  ;
-;  H  ; LC123      ; A[3], rpi_rdy, a_s[3], msxpi_select~36sexpbal                                                                                    ; a_s[3], rpi_a[3]                                                                                                                                                                                                  ;
-+-----+------------+----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Shareable Expander                                                            ;
++-------------------------------------------------+-----------------------------+
+; Number of shareable expanders  (Average = 2.25) ; Number of LABs  (Total = 6) ;
++-------------------------------------------------+-----------------------------+
+; 0                                               ; 2                           ;
+; 1                                               ; 2                           ;
+; 2                                               ; 0                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 4                           ;
++-------------------------------------------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                           ;
++-----+------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                            ; Output                                         ;
++-----+------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+;  A  ; LC5        ; msxpi_select~78, msxpi_select~79, RD_n, SLTSL, msxpi_select~80, process_0~1sexp                                  ; rpi_cs                                         ;
+;  A  ; LC3        ; rpi_d[7], rpi_d_s[7]~62, process_0~1sexp, rpi_rdy, rpi_on                                                        ; rpi_d_s[7]~62, D[7]                            ;
+;  A  ; LC8        ; A[12], a_s[12], msxpi_select~78, msxpi_select~79, RD_n, SLTSL, msxpi_select~80, rpi_rdy, rpi_on, process_0~1sexp ; a_s[12], rpi_a[12]                             ;
+;  A  ; LC11       ; A[11], a_s[11], msxpi_select~78, msxpi_select~79, RD_n, SLTSL, msxpi_select~80, rpi_rdy, rpi_on, process_0~1sexp ; a_s[11], rpi_a[11]                             ;
+;  A  ; LC13       ; A[8], a_s[8], msxpi_select~78, msxpi_select~79, RD_n, SLTSL, msxpi_select~80, rpi_rdy, rpi_on, process_0~1sexp   ; a_s[8], rpi_a[8]                               ;
+;  A  ; LC14       ; A[5], a_s[5], msxpi_select~78, msxpi_select~79, RD_n, SLTSL, msxpi_select~80, rpi_rdy, rpi_on, process_0~1sexp   ; a_s[5], rpi_a[5]                               ;
+;  A  ; LC16       ; A[4], a_s[4], msxpi_select~78, msxpi_select~79, RD_n, SLTSL, msxpi_select~80, rpi_rdy, rpi_on, process_0~1sexp   ; a_s[4], rpi_a[4]                               ;
+;  A  ; LC6        ;                                                                                                                  ; rpi_d[0]                                       ;
+;  B  ; LC25       ; rpi_d[1], rpi_d_s[1]~38, process_0~8, rpi_rdy, rpi_on                                                            ; rpi_d_s[1]~38, D[1]                            ;
+;  B  ; LC29       ; rpi_d[5], rpi_d_s[5]~54, process_0~8, rpi_rdy, rpi_on                                                            ; rpi_d_s[5]~54, D[5]                            ;
+;  B  ; LC27       ; rpi_d[3], rpi_d_s[3]~46, process_0~8, rpi_rdy, rpi_on                                                            ; rpi_d_s[3]~46, D[3]                            ;
+;  D  ; LC59       ; rpi_d[2], rpi_d_s[2]~42, process_0~7, rpi_rdy, rpi_on                                                            ; rpi_d_s[2]~42, D[2]                            ;
+;  D  ; LC64       ; rpi_d[6], rpi_d_s[6]~58, process_0~7, rpi_rdy, rpi_on                                                            ; rpi_d_s[6]~58, D[6]                            ;
+;  D  ; LC61       ; rpi_d[4], rpi_d_s[4]~50, process_0~7, rpi_rdy, rpi_on                                                            ; rpi_d_s[4]~50, D[4]                            ;
+;  D  ; LC57       ; rpi_d[0], rpi_d_s[0]~34, process_0~7, rpi_rdy, rpi_on                                                            ; rpi_d_s[0]~34, D[0]                            ;
+;  E  ; LC77       ;                                                                                                                  ; BDIR                                           ;
+;  F  ; LC96       ; msxpi_select~21, msxpi_select~22, RD_n, SLTSL, msxpi_select~23, process_0~4                                      ; WAIT_n                                         ;
+;  F  ; LC93       ; A[6], a_s[6], msxpi_select~21, msxpi_select~22, RD_n, SLTSL, msxpi_select~23, rpi_rdy, rpi_on, process_0~4       ; a_s[6], rpi_a[6]                               ;
+;  F  ; LC85       ; A[14], RD_n, SLTSL, A[15], A[12], A[13], rpi_rdy                                                                 ; D[0], D[1], D[2], D[3], D[4], D[5], D[6], D[7] ;
+;  F  ; LC83       ; msxpi_select~21, msxpi_select~22, RD_n, SLTSL, msxpi_select~23                                                   ; WAIT_n                                         ;
+;  F  ; LC88       ;                                                                                                                  ; rpi_d[2]                                       ;
+;  F  ; LC91       ;                                                                                                                  ; rpi_d[3]                                       ;
+;  F  ; LC94       ;                                                                                                                  ; rpi_d[4]                                       ;
+;  G  ; LC97       ; A[7], a_s[7], msxpi_select~81, msxpi_select~82, RD_n, SLTSL, msxpi_select~83, rpi_rdy, rpi_on, process_0~5       ; a_s[7], rpi_a[7]                               ;
+;  G  ; LC101      ; A[9], a_s[9], msxpi_select~81, msxpi_select~82, RD_n, SLTSL, msxpi_select~83, rpi_rdy, rpi_on, process_0~5       ; a_s[9], rpi_a[9]                               ;
+;  G  ; LC99       ; A[10], a_s[10], msxpi_select~81, msxpi_select~82, RD_n, SLTSL, msxpi_select~83, rpi_rdy, rpi_on, process_0~5     ; a_s[10], rpi_a[10]                             ;
+;  G  ; LC107      ; A[13], a_s[13], msxpi_select~81, msxpi_select~82, RD_n, SLTSL, msxpi_select~83, rpi_rdy, rpi_on, process_0~5     ; a_s[13], rpi_a[13]                             ;
+;  G  ; LC105      ; WR_n, wr_s, msxpi_select~81, msxpi_select~82, RD_n, SLTSL, msxpi_select~83, rpi_rdy, rpi_on, process_0~5         ; wr_s, rpi_wr                                   ;
+;  G  ; LC104      ;                                                                                                                  ; rpi_d[1]                                       ;
+;  G  ; LC109      ; IORQ_n, io_s, msxpi_select~81, msxpi_select~82, RD_n, SLTSL, msxpi_select~83, rpi_rdy, rpi_on, process_0~5       ; io_s, rpi_io                                   ;
+;  H  ; LC123      ; A[3], a_s[3], msxpi_select~84, msxpi_select~85, RD_n, SLTSL, msxpi_select~86, rpi_rdy, rpi_on, process_0~6       ; a_s[3], rpi_a[3]                               ;
+;  H  ; LC118      ; A[1], a_s[1], msxpi_select~84, msxpi_select~85, RD_n, SLTSL, msxpi_select~86, rpi_rdy, rpi_on, process_0~6       ; a_s[1], rpi_a[1]                               ;
+;  H  ; LC115      ; A[2], a_s[2], msxpi_select~84, msxpi_select~85, RD_n, SLTSL, msxpi_select~86, rpi_rdy, rpi_on, process_0~6       ; a_s[2], rpi_a[2]                               ;
+;  H  ; LC126      ;                                                                                                                  ; rpi_d[5]                                       ;
+;  H  ; LC128      ;                                                                                                                  ; rpi_d[6]                                       ;
+;  H  ; LC125      ;                                                                                                                  ; rpi_d[7]                                       ;
+;  H  ; LC120      ; A[0], a_s[0], msxpi_select~84, msxpi_select~85, RD_n, SLTSL, msxpi_select~86, rpi_rdy, rpi_on, process_0~6       ; a_s[0], rpi_a[0]                               ;
++-----+------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------+
@@ -525,8 +567,8 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "rpi_off" is assigned to location or region, but does not exist in design
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 459 megabytes
-    Info: Processing ended: Tue Jul 07 07:22:13 2020
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Processing ended: Tue Jul 07 10:40:17 2020
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 

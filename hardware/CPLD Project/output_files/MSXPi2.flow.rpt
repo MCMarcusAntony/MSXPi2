@@ -1,5 +1,5 @@
 Flow report for MSXPi2
-Tue Jul 07 07:22:30 2020
+Tue Jul 07 10:40:44 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Tue Jul 07 07:22:20 2020           ;
+; Flow Status               ; Successful - Tue Jul 07 10:40:26 2020           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; MSXPi2                                          ;
 ; Top-level Entity Name     ; MSXPi2                                          ;
 ; Family                    ; MAX7000S                                        ;
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 38 / 128 ( 30 % )                               ;
+; Total macrocells          ; 37 / 128 ( 29 % )                               ;
 ; Total pins                ; 64 / 68 ( 94 % )                                ;
 +---------------------------+-------------------------------------------------+
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/07/2020 07:21:51 ;
+; Start date & time ; 07/07/2020 10:39:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MSXPi2              ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------+-------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                         ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+-------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 8796761971725.159413171103804 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 8796761971725.159414359401700 ; --            ; --          ; --         ;
 ; FITTER_EFFORT            ; Standard Fit                  ; Auto Fit      ; --          ; --         ;
 ; OPTIMIZE_HOLD_TIMING     ; Off                           ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; output_files                  ; --            ; --          ; --         ;
@@ -80,11 +80,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 459 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 459 MB              ; 00:00:05                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 364 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 355 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:17                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 452 MB              ; 00:00:11                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 459 MB              ; 00:00:04                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 364 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 360 MB              ; 00:00:05                           ;
+; Total                     ; 00:00:35     ; --                      ; --                  ; 00:00:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

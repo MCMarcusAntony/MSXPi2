@@ -79,39 +79,48 @@ end MSXPi2;
 architecture ppl_type of MSXPi2 is
 
 	signal msxpi_select: std_logic := '0';
-   signal wait_n_s: std_logic := 'Z';
+   signal wait_n_s: std_logic := '1';
 	signal a_s : std_logic_vector(15 downto 0);
    signal d_s: std_logic_vector(7 downto 0);
 	signal rpi_d_s: std_logic_vector(7 downto 0);
 	signal cs_s: std_logic := '0';
 	signal wr_s: std_logic;
 	signal io_s: std_logic;
-	signal rpi_on_s: std_logic;
+	signal rpi_on_s: std_logic := '1';
 	signal rpi_rdy_s: std_logic;
 	signal msxpi_read_rom: std_logic;
 	signal msxpi_read_mem: std_logic;
 	signal msxpi_write_mem: std_logic;
+	signal msxpi_read_io: std_logic;
 	signal msxpi_write_io: std_logic;
+	signal reset: std_logic := '0';
+	
 begin
 
 	rpi_on_s <= not rpi_on;
 	BDIR <= 'Z';   		
 	WAIT_n <= wait_n_s;
-	D <= rpi_d_s when msxpi_read_rom = '1' else "ZZZZZZZZ";
+	D <= rpi_d_s when msxpi_select = '1' or rpi_rdy = '1' else "ZZZZZZZZ";
+	rpi_cs <= cs_s; --'1' when rpi_d_s = x"42" else cs_s;
+	rpi_a <= a_s(13 downto 0);
+	--rpi_d <= d_s;
+	rpi_wr <= wr_s;
+	rpi_io <= io_s;
 	
-	msxpi_read_rom <= '1' when (sltsl = '0' and A <= x"3FFF") else '0';
+	msxpi_read_rom <= '1' when sltsl = '0' and RD_n = '0' else '0';
 	msxpi_read_mem <= '1' when (MREQ_n = '0' and RD_n = '0') else '0';
 	msxpi_write_mem <= '1' when (MREQ_n = '0' and WR_n = '0') else '0';
+	msxpi_read_io <= '1' when (IORQ_n = '0' and RD_n ='0') else '0';
 	msxpi_write_io <= '1' when (IORQ_n = '0' and WR_n ='0') else '0';
 	
-	msxpi_select <= '1' when ((msxpi_write_mem = '1' and (A = x"8000" OR A = x"9000" or A = x"BFFF")) or 
-	                          (msxpi_read_mem = '1' and (A = x"8000" OR A = x"9000" or A = x"BFFF")) or
-	                          (msxpi_write_io = '1' and (A(7 downto 0) = x"56"))) else
-						 '0';
+	msxpi_select <= '1' when msxpi_read_rom = '1' and (A >= x"4000" and A < x"D000") else '0';
+	                     --when msxpi_read_io = '1' and A(7 downto 0) = x"56" else '0';   
+	                     --(msxpi_write_mem = '1' and (A = x"8000" OR A = x"9000" or A = x"BFFF")) or 	
+							   --msxpi_read_rom = '1' else
 						 
-	process(msxpi_select,rpi_rdy)
+	process(msxpi_select,rpi_rdy, reset)
 	begin
-		if (rpi_rdy = '1') then
+		if (rpi_rdy = '1' or reset = '1') then
 			wait_n_s <= 'Z';
 			cs_s <= '0';
 			rpi_d_s <= rpi_d;
@@ -124,24 +133,15 @@ begin
 			io_s <= IORQ_n;
 		end if;
 	end process;
-	
-	--process(cs_s)
-	--begin
-	--	if (cs_s'event and cs_s = '1') then
-	--		rpi_cs <= cs_s;
-	--		rpi_a <= a_s(13 downto 0);
-	--		rpi_d <= d_s;
-	--		rpi_wr <= wr_s;
-	--		rpi_io <= io_s;
-	--	end if;
-	--end process;
-	
-			rpi_cs <= cs_s;
-			rpi_a <= a_s(13 downto 0);
-			rpi_d <= d_s;
-			rpi_wr <= wr_s;
-			rpi_io <= io_s;
 			
+	process(rpi_on_s)
+	begin
+	    if (rpi_on_s = '1') then
+		     reset <= '0';
+		 else
+		     reset <= '1';
+		 end if;
+	end process;
 end;
 
 
