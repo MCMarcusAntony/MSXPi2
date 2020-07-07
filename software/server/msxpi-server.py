@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import mmap
 import os
+import time
 
 version = "0.1"
 build   = "20200704.00000"
@@ -42,8 +43,8 @@ def init_gpio():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(cs, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(rdy, GPIO.OUT)
-    GPIO.setup(wr, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.setup(io, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(wr, GPIO.IN)
+    GPIO.setup(io, GPIO.IN)
     GPIO.setup(rpi_on, GPIO.OUT)
     GPIO.setup(res2, GPIO.OUT)
     GPIO.setup(d0, GPIO.IN)
@@ -73,8 +74,6 @@ def msxpi_bus_access(byte_out=0):
     addr = 0
     data = 0
     wr_n = 0
-    rd_n = 0
-    iorq_n = 0
     mreq_n = 0
 
     # read A bus
@@ -88,9 +87,7 @@ def msxpi_bus_access(byte_out=0):
         data = data | GPIO.input(bit)
 
     wr_n = GPIO.input(wr)
-    rd_n = not wr_n
     mreq_n = GPIO.input(io)
-    iorq_n = not mreq_n
 
     print("Address:",hex(addr))
     print("data:",hex(data))
@@ -98,15 +95,31 @@ def msxpi_bus_access(byte_out=0):
     print("mreq_n:",hex(mreq_n))
     return addr,data,wr_n,rd_n,iorq_n,mreq_n
 
-def rom_sim():
+def rom_sim(arg=0):
+    addr = 0
+    data = 0
     # read A bus
     for bit in [a13,a12,a11,a10,a9,a8,a7,a6,a5,a4,a3,a2,a1,a0]:
         addr = addr << 1
         addr = addr | GPIO.input(bit)
-    
-    # Get the byte form the ROM file
-    byte = rom_buffer[addr]
-    
+
+    wr_n = not GPIO.input(wr)
+    mreq_n = bool(GPIO.input(io))
+
+    # read D bus
+    if wr_n == GPIO.HIGH:
+        for bit in [d7,d6,d5,d4,d3,d2,d1,d0]:
+            data = data << 1
+            data = data | GPIO.input(bit)
+
+    print("Address:",hex(addr))
+    print("data:",hex(data))
+    print("wr_n:",wr_n)
+    print("mreq_n:",mreq_n)
+    print("rd_n:", not wr_n)
+    print("iorq_n:",not mreq_n)
+
+
     # Switch D bus to OUTPUT mode
     GPIO.setup(d0, GPIO.OUT)
     GPIO.setup(d1, GPIO.OUT)
@@ -118,30 +131,18 @@ def rom_sim():
     GPIO.setup(d7, GPIO.OUT)
     
     # Get the byte from the ROM file
-    byte = rombuffer[addr]
-    
-    nibble = 0x80
-    for bit in [d7,d6,d5,d4,d3,d2,d1,d0]:
-    #print("Nibble:",hex(nibble))
-    if (byte & nibble):
-        GPIO.output(bit, GPIO.HIGH)
-        print("1", end = '')
-    else:
-        GPIO.output(bit, GPIO.LOW)
-        print("0", end = '')
-            
-    nibble = nibble >> 1
+    if wr_n == GPIO.HIGH:
+        byte = ord(rombuffer[addr])
+        print(hex(addr),hex(byte))
+        GPIO.output(d0,byte & 0x1)
+        GPIO.output(d1,byte & 0x2)
+        GPIO.output(d2,byte & 0x4)
+        GPIO.output(d3,byte & 0x8)
+        GPIO.output(d4,byte & 0x10)
+        GPIO.output(d5,byte & 0x20)
+        GPIO.output(d6,byte & 0x40)
+        GPIO.output(d7,byte & 0x80)
 
-    # test this:
-	# GPIO.output(d0,byte & 0x1)
-	# GPIO.output(d1,byte & 0x2)
-	# GPIO.output(d2,byte & 0x4)
-	# GPIO.output(d3,byte & 0x8)
-	# GPIO.output(d4,byte & 0x10)
-	# GPIO.output(d5,byte & 0x20)
-	# GPIO.output(d6,byte & 0x40)
-	# GPIO.output(d7,byte & 0x80)
-	
     # Pulse RPI_READY signal for CPLD know that RPI finished procesing
     GPIO.output(rdy, GPIO.LOW)
     GPIO.output(rdy, GPIO.HIGH)
@@ -156,7 +157,8 @@ def rom_sim():
     GPIO.setup(d5, GPIO.IN)
     GPIO.setup(d6, GPIO.IN)
     GPIO.setup(d7, GPIO.IN)
-    
+   
+ 
 def rom_buffer(filename, access=mmap.ACCESS_WRITE):
     print "rom_buffer:Starting"
     size = os.path.getsize(filename)
@@ -171,16 +173,16 @@ def rom_buffer(filename, access=mmap.ACCESS_WRITE):
 # main program starts here
 # ========================================================
 init_gpio()
-GPIO.output(rdy, GPIO.LOW)
-GPIO.output(rdy, GPIO.HIGH)
-GPIO.output(rdy, GPIO.LOW)
+#GPIO.output(rdy, GPIO.LOW)
+#GPIO.output(rdy, GPIO.HIGH)
+#GPIO.output(rdy, GPIO.LOW)
 
 GPIO.add_event_detect(cs, GPIO.RISING, callback=rom_sim)
 GPIO.output(rpi_on, GPIO.LOW)
 print "GPIO Initialized\n"
 print "Starting MSXPi2 Server Version ",version,"Build",build
 
-rombuffer = rom_buffer("/home/pi/msxpi/games/roadf.rom")
+rombuffer = rom_buffer("/home/pi/msxpi2/frogger.rom")
 
 print "st_recvcmd: waiting command"
 try:

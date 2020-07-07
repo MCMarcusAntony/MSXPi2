@@ -3,63 +3,15 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Setup 'A[0]'
-Slack : -21.500
-TNS   : -344.000
-
-Type  : Setup 'WR_n'
-Slack : -21.500
-TNS   : -344.000
-
-Type  : Setup 'A[10]'
 Slack : -12.500
-TNS   : -200.000
-
-Type  : Hold 'A[10]'
-Slack : -13.000
-TNS   : -91.000
+TNS   : -300.000
 
 Type  : Hold 'A[0]'
-Slack : -4.000
-TNS   : -12.000
-
-Type  : Hold 'WR_n'
-Slack : -4.000
-TNS   : -12.000
-
-Type  : Recovery 'A[0]'
-Slack : -25.500
-TNS   : -204.000
-
-Type  : Recovery 'WR_n'
-Slack : -25.500
-TNS   : -204.000
-
-Type  : Recovery 'A[10]'
-Slack : -16.500
-TNS   : -132.000
-
-Type  : Removal 'A[10]'
-Slack : 0.000
-TNS   : 0.000
-
-Type  : Removal 'A[0]'
-Slack : 9.000
-TNS   : 0.000
-
-Type  : Removal 'WR_n'
-Slack : 9.000
-TNS   : 0.000
-
-Type  : Minimum Pulse Width 'A[10]'
-Slack : -5.500
-TNS   : -572.000
+Slack : -13.000
+TNS   : -13.000
 
 Type  : Minimum Pulse Width 'A[0]'
 Slack : -5.500
-TNS   : -286.000
-
-Type  : Minimum Pulse Width 'WR_n'
-Slack : -5.500
-TNS   : -286.000
+TNS   : -572.000
 
 ------------------------------------------------------------

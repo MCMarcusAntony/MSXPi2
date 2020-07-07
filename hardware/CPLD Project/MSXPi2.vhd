@@ -82,12 +82,14 @@ architecture ppl_type of MSXPi2 is
    signal wait_n_s: std_logic := 'Z';
 	signal a_s : std_logic_vector(15 downto 0);
    signal d_s: std_logic_vector(7 downto 0);
+	signal rpi_d_s: std_logic_vector(7 downto 0);
 	signal cs_s: std_logic := '0';
 	signal wr_s: std_logic;
 	signal io_s: std_logic;
 	signal rpi_on_s: std_logic;
 	signal rpi_rdy_s: std_logic;
 	signal msxpi_read_rom: std_logic;
+	signal msxpi_read_mem: std_logic;
 	signal msxpi_write_mem: std_logic;
 	signal msxpi_write_io: std_logic;
 begin
@@ -95,13 +97,15 @@ begin
 	rpi_on_s <= not rpi_on;
 	BDIR <= 'Z';   		
 	WAIT_n <= wait_n_s;
-	D <= d_s when msxpi_read_rom = '1' else "ZZZZZZZZ";
+	D <= rpi_d_s when msxpi_read_rom = '1' else "ZZZZZZZZ";
 	
 	msxpi_read_rom <= '1' when (sltsl = '0' and A <= x"3FFF") else '0';
+	msxpi_read_mem <= '1' when (MREQ_n = '0' and RD_n = '0') else '0';
 	msxpi_write_mem <= '1' when (MREQ_n = '0' and WR_n = '0') else '0';
 	msxpi_write_io <= '1' when (IORQ_n = '0' and WR_n ='0') else '0';
 	
-	msxpi_select <= '1' when ((msxpi_write_mem = '1' and (A = x"2FA0" OR A = x"3CDA" or A = x"100A")) or 
+	msxpi_select <= '1' when ((msxpi_write_mem = '1' and (A = x"8000" OR A = x"9000" or A = x"BFFF")) or 
+	                          (msxpi_read_mem = '1' and (A = x"8000" OR A = x"9000" or A = x"BFFF")) or
 	                          (msxpi_write_io = '1' and (A(7 downto 0) = x"56"))) else
 						 '0';
 						 
@@ -110,14 +114,14 @@ begin
 		if (rpi_rdy = '1') then
 			wait_n_s <= 'Z';
 			cs_s <= '0';
-			d_s <= rpi_d;
+			rpi_d_s <= rpi_d;
 		elsif (msxpi_select'event and msxpi_select = '1') then
 			wait_n_s <= '0';
 			cs_s <= '1';
-			a_s <= a;
-			d_s <= d;
+			a_s <= A;
+			d_s <= D;
 			wr_s <= WR_n;
-			io_s <= MREQ_n;
+			io_s <= IORQ_n;
 		end if;
 	end process;
 	
