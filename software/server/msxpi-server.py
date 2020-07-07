@@ -70,31 +70,6 @@ def init_gpio():
     GPIO.setup(a12, GPIO.IN)
     GPIO.setup(a13, GPIO.IN)
 
-def msxpi_bus_access(byte_out=0):
-    addr = 0
-    data = 0
-    wr_n = 0
-    mreq_n = 0
-
-    # read A bus
-    for bit in [a13,a12,a11,a10,a9,a8,a7,a6,a5,a4,a3,a2,a1,a0]:
-        addr = addr << 1
-        addr = addr | GPIO.input(bit)
-
-    # read D bus
-    for bit in [d7,d6,d5,d4,d3,d2,d1,d0]:
-        data = data << 1
-        data = data | GPIO.input(bit)
-
-    wr_n = GPIO.input(wr)
-    mreq_n = GPIO.input(io)
-
-    print("Address:",hex(addr))
-    print("data:",hex(data))
-    print("wr_n:",hex(wr_n))
-    print("mreq_n:",hex(mreq_n))
-    return addr,data,wr_n,rd_n,iorq_n,mreq_n
-
 def rom_sim(arg=0):
     addr = 0
     data = 0
@@ -105,19 +80,22 @@ def rom_sim(arg=0):
 
     wr_n = not GPIO.input(wr)
     mreq_n = bool(GPIO.input(io))
+    rd_n = not wr_n;
+    iorq_n = not mreq_n;
 
     # read D bus
-    if wr_n == GPIO.HIGH:
+    if wr_n:
         for bit in [d7,d6,d5,d4,d3,d2,d1,d0]:
             data = data << 1
             data = data | GPIO.input(bit)
 
+    print("Inputs")
     print("Address:",hex(addr))
     print("data:",hex(data))
     print("wr_n:",wr_n)
     print("mreq_n:",mreq_n)
-    print("rd_n:", not wr_n)
-    print("iorq_n:",not mreq_n)
+    print("rd_n:", rd_n)
+    print("iorq_n:",iorq_n)
 
 
     # Switch D bus to OUTPUT mode
@@ -131,7 +109,7 @@ def rom_sim(arg=0):
     GPIO.setup(d7, GPIO.OUT)
     
     # Get the byte from the ROM file
-    if wr_n == GPIO.HIGH:
+    if rd_n:
         byte = ord(rombuffer[addr])
         print(hex(addr),hex(byte))
         GPIO.output(d0,byte & 0x1)
